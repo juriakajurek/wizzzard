@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Program Dietetyczny</title>
+        <link rel="icon" href="./images//logo.svg" type="image/x-icon" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./public/css/main.css" type="text/css" />
+    </head>
+
+    <body>
+        <div class="top-container min-vh-100 h-auto max-vw-100 m-0 p-0">
+            <nav class="navbar navbar-light scrolled-up autohide py-0 w-100">
+                <div
+                    class="
+                        d-flex
+                        flex-row
+                        brand-side
+                        align-items-center
+                        justify-content-center
+                    "
+                >
+                    <a
+                        class="navbar-brand"
+                        id="menu-toggle"
+                        href="#menu-toggle"
+                    >
+                        <div id="toggler-container" class="toggled">
+                            <img id="slide" class="toggled" />
+
+                            <img
+                                src="images/hamburger.svg"
+                                alt="logo"
+                                class="navbar-toggle-icon"
+                            />
+                        </div>
+                    </a>
+                    <a
+                        href="#"
+                        class=""
+                        style="text-decoration: none; color: inherit"
+                    >
+                        <div class="brand">Program dietetyczny</div>
+                    </a>
+                </div>
+                <div class="" id="navbarNavAltMarkup">
+                    <div
+                        class="
+                            navbar-nav
+                            my-auto
+                            d-flex
+                            flex-row
+                            align-items-center
+                            justify-content-center
+                        "
+                    >
+                        <a href="#!" class="menu-item">
+                            <button
+                                type="button"
+                                class="btn btn-primary btn-sm px-4 m-1 py-2"
+                            >
+                                Dodaj nowego pacjenta <span>+</span>
+                            </button>
+                        </a>
+
+                        <a href="#" class="menu-item">
+                            <img
+                                src="./images/icons/bell.svg"
+                                class="user-image"
+                                alt="..."
+                            />
+                        </a>
+                        <a href="#!" class="menu-item">
+                            <img
+                                src="./images/icons/exclamation-mark.svg"
+                                class="user-image"
+                                alt="..."
+                            />
+                            <div
+                                class="
+                                    d-flex
+                                    flex-row
+                                    align-items-center
+                                    justify-content-center
+                                "
+                            >
+                                Zgłoś uwagę
+                            </div>
+                        </a>
+
+                        <a href="#" class="user menu-item">
+                            <img
+                                src="./images/avatar.svg"
+                                class="user-image"
+                                alt="..."
+                            />
+                            <div
+                                class="
+                                    d-flex
+                                    flex-row
+                                    align-items-center
+                                    justify-content-center
+                                "
+                            >
+                                Marcin Winiszewski
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="divider"></div>
+
+            <div id="wrapper" class="toggled">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                    <a href="#">
+                        <div
+                            class="sidebar-item user selected"
+                            onclick="makeSelected(this, 'user')"
+                        >
+                            <img
+                                src="./images/icons/user-selected.svg"
+                                class="user-image"
+                                alt="Karta pacjenta"
+                            />
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div
+                            class="sidebar-item cutlery"
+                            onclick="makeSelected(this, 'cutlery')"
+                        >
+                            <img
+                                src="./images/icons/cutlery.svg"
+                                class="user-image"
+                                alt="Jadłospisy"
+                            />
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div
+                            class="sidebar-item cherries"
+                            onclick="makeSelected(this, 'cherries')"
+                        >
+                            <img
+                                src="./images/icons/cherries.svg"
+                                class="user-image"
+                                alt="Wisienki"
+                            />
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div
+                            class="sidebar-item pill"
+                            onclick="makeSelected(this, 'pill')"
+                        >
+                            <img
+                                src="./images/icons/pill.svg"
+                                class=""
+                                alt="Leki"
+                            />
+                        </div>
+                    </a>
+                </div>
+                <!-- /#sidebar-wrapper -->
+            </div>
+            <!-- /#wrapper -->
+            <div class="content">
+                <h2 class="main-header">Karta nowego pacjenta</h2>
+                <div class="section">
+                    <h3 class="section-header">1. Podstawowe dane pacjenta</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="inputSex">Płeć: </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputSex"
+                                    placeholder=""
+                                />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputAge">Wiek: </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputAge"
+                                    placeholder=""
+                                />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputName">Imię: </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputName"
+                                    placeholder=""
+                                />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputSurname">Nazwisko: </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputSurname"
+                                    placeholder=""
+                                />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputEmail">Adres mailowy:</label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="inputEmail"
+                                    placeholder=""
+                                />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="inputPhone">Telefon: </label>
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="inputPhone"
+                                    placeholder=""
+                                />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress">Adres: </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputAddress"
+                                    placeholder=""
+                                />
+                            </div>
+                        </div>
+                    </form>
+
+                    <button
+                        type="button"
+                        class="btn btn-outline-primary btn-sm px-4 my-1 py-2"
+                    >
+                        Zapisz i przejdź dalej
+                    </button>
+                </div>
+                <div class="divider"></div>
+
+                <div class="section">
+                    <h3 class="section-header">2. Dane kliniczne</h3>
+                    <div class="diseases-form">
+                        <p class="header">Wykaz chorób</p>
+                        <div class="form-check-row">
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox11"
+                                    value="option1"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox11"
+                                    >Celiakia</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox12"
+                                    value="option2"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox12"
+                                    >Insulinooporność</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox13"
+                                    value="option3"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox13"
+                                    >Stłuszczenie wątroby</label
+                                >
+                            </div>
+                        </div>
+                        <div class="form-check-row">
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox11"
+                                    value="option1"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox11"
+                                    >Choroby przełyku, jamy ustnej</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox12"
+                                    value="option2"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox12"
+                                    >Nadciśnienie</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox13"
+                                    value="option3"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox13"
+                                    >Zaburzenia lipidowe</label
+                                >
+                            </div>
+                        </div>
+                        <div class="form-check-row">
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox11"
+                                    value="option1"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox11"
+                                    >Choroby wątroby</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox12"
+                                    value="option2"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox12"
+                                    >Niedoczynność tarczycy</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox13"
+                                    value="option3"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox13"
+                                    >Zaparcia</label
+                                >
+                            </div>
+                        </div>
+                        <div class="form-check-row">
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox11"
+                                    value="option1"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox11"
+                                    >Choroby zapalne jelit</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox12"
+                                    value="option2"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox12"
+                                    >Otyłość</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox13"
+                                    value="option3"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox13"
+                                    >Zespół jelita drażliwego</label
+                                >
+                            </div>
+                        </div>
+                        <div class="form-check-row">
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox11"
+                                    value="option1"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox11"
+                                    >Cukrzyca</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox12"
+                                    value="option2"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox12"
+                                    >Przewlekła niewydolność nerek</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox13"
+                                    value="option3"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox13"
+                                    >Zespół metaboliczny</label
+                                >
+                            </div>
+                        </div>
+                        <div class="form-check-row">
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox11"
+                                    value="option1"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox11"
+                                    >Dna moczanowa</label
+                                >
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="inlineCheckbox12"
+                                    value="option2"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="inlineCheckbox12"
+                                    >Refluks</label
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </div>
+        </div>
+    </body>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+</html>
