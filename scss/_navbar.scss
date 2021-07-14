@@ -8,6 +8,7 @@ $sidebar-width: 64px;
 
     box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
     background-color: white;
+    z-index: 999;
     position: fixed;
     &.scrolled-up {
         top: 0;
