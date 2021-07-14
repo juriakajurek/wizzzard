@@ -81,6 +81,7 @@
         width: 75%;
         height: 300vh; //auto!
         .main-header {
+            margin-top: 5rem;
             color: $primary-color;
             font-weight: 600;
             font-size: 2rem;
@@ -134,26 +135,102 @@
         align-items: center;
         .form-check {
             width: 32%;
-            input {
-                background-color: red;
-            }
-            label {
-                padding-left: 0.5rem;
-
-                color: $primary-color;
-                opacity: 0.64;
-                font-weight: 400;
-                font-size: 1rem;
-                line-height: 1.5rem;
-                letter-spacing: 0px;
-            }
         }
     }
 }
 
-input[type='checkbox'] {
-    // display: none;
+.form-check-label {
+    color: $primary-color;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0px;
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+    div {
+        opacity: 0.64;
+        display: inline;
+    }
 }
 
-.checkbox {
+.form-check-label input:checked ~ div {
+    opacity: 1 !important;
+}
+
+.form-check-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form-check-label .custom-checkbox {
+    margin-bottom: 1rem;
+    margin-left: -0.5rem;
+    position: absolute;
+    top: -0.25rem;
+    left: 0px;
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    border: 1px solid $primary-color;
+    border-radius: 0.5rem;
+    opacity: 0.16;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.form-check-label input:checked ~ .custom-checkbox {
+    background-color: $link-color;
+    border-radius: 0.5rem;
+
+    -webkit-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    border: 2px solid $link-color;
+}
+
+.form-check-label .custom-checkbox::after {
+    position: absolute;
+    content: '';
+    left: 2rem;
+    top: 2rem;
+    height: 0px;
+    width: 0px;
+    border-radius: 5px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+    opacity: 1;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.form-check-label input:checked ~ .custom-checkbox::after {
+    -webkit-transform: rotate(40deg) scale(1);
+    -ms-transform: rotate(40deg) scale(1);
+    transform: rotate(40deg) scale(1);
+    opacity: 1;
+    left: 10px;
+    top: 6px;
+    width: 8px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    background-color: transparent;
+    border-radius: 0.125rem;
+
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
 }

@@ -61,6 +61,7 @@
     width: 75%;
     height: 300vh; }
     .top-container .content .main-header {
+      margin-top: 5rem;
       color: #333333;
       font-weight: 600;
       font-size: 2rem;
@@ -103,16 +104,92 @@
     align-items: center; }
     .diseases-form .form-check-row .form-check {
       width: 32%; }
-      .diseases-form .form-check-row .form-check input {
-        background-color: red; }
-      .diseases-form .form-check-row .form-check label {
-        padding-left: 0.5rem;
-        color: #333333;
-        opacity: 0.64;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1.5rem;
-        letter-spacing: 0px; }
+
+.form-check-label {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0px;
+  margin-bottom: 1.5rem;
+  margin-left: 1rem; }
+  .form-check-label div {
+    opacity: 0.64;
+    display: inline; }
+
+.form-check-label input:checked ~ div {
+  opacity: 1 !important; }
+
+.form-check-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer; }
+
+.form-check-label .custom-checkbox {
+  margin-bottom: 1rem;
+  margin-left: -0.5rem;
+  position: absolute;
+  top: -0.25rem;
+  left: 0px;
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: 1px solid #333333;
+  border-radius: 0.5rem;
+  opacity: 0.16;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out; }
+
+.form-check-label input:checked ~ .custom-checkbox {
+  background-color: #2f80ed;
+  border-radius: 0.5rem;
+  -webkit-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  border: 2px solid #2f80ed; }
+
+.form-check-label .custom-checkbox::after {
+  position: absolute;
+  content: '';
+  left: 2rem;
+  top: 2rem;
+  height: 0px;
+  width: 0px;
+  border-radius: 5px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out; }
+
+.form-check-label input:checked ~ .custom-checkbox::after {
+  -webkit-transform: rotate(40deg) scale(1);
+  -ms-transform: rotate(40deg) scale(1);
+  transform: rotate(40deg) scale(1);
+  opacity: 1;
+  left: 10px;
+  top: 6px;
+  width: 8px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  background-color: transparent;
+  border-radius: 0.125rem;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out; }
 
 body {
   overflow-x: hidden;
@@ -129,8 +206,10 @@ body {
   padding: 0;
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
   background-color: white;
-  z-index: 999;
-  position: fixed; }
+  z-index: 900;
+  position: fixed;
+  width: 100vw;
+  max-width: 100vw; }
   .navbar.scrolled-up {
     top: 0;
     transition: 0.5s ease; }
@@ -153,17 +232,21 @@ body {
     color: #5f308b !important; }
     .navbar .brand-side .navbar-brand #toggler-container {
       height: 100%;
-      width: 64px;
+      width: 5.2rem;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative; }
+      .navbar .brand-side .navbar-brand #toggler-container .navbar-toggle-icon {
+        align-self: center;
+        justify-self: center; }
   .navbar .navbar-nav {
     padding-right: 2.25rem; }
     .navbar .navbar-nav .menu-item {
       padding: 0.75rem; }
 
 #wrapper {
+  z-index: 1000;
   position: fixed;
   top: 5rem;
   padding-right: 0;
@@ -185,7 +268,7 @@ body {
     height: 100%;
     margin-left: -64px;
     overflow-y: auto;
-    background: #492d9a;
+    background: transparent;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -222,8 +305,8 @@ body {
   #slide {
     z-index: -2;
     position: absolute;
-    left: -70px;
-    width: 70px;
+    left: -80px;
+    width: 80px;
     height: 1000vh;
     overflow: hidden;
     background: #492d9a;
