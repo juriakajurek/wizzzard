@@ -15,25 +15,25 @@ function makeSelected(el, itemName) {
             case cls.contains('user'):
                 item.children[0].children[0].setAttribute(
                     'src',
-                    `../images/icons/user.svg`
+                    `./images/icons/user.svg`
                 )
                 break
             case cls.contains('cutlery'):
                 item.children[0].children[0].setAttribute(
                     'src',
-                    `../images/icons/cutlery.svg`
+                    `./images/icons/cutlery.svg`
                 )
                 break
             case cls.contains('cherries'):
                 item.children[0].children[0].setAttribute(
                     'src',
-                    `../images/icons/cherries.svg`
+                    `./images/icons/cherries.svg`
                 )
                 break
             case cls.contains('pill'):
                 item.children[0].children[0].setAttribute(
                     'src',
-                    `../images/icons/pill.svg`
+                    `./images/icons/pill.svg`
                 )
                 break
         }
