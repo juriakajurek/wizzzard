@@ -191,6 +191,29 @@
   -ms-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out; }
 
+.boxesContainer {
+  margin-top: 1rem;
+  justify-content: flex-start; }
+  .boxesContainer .labelBox {
+    display: flex;
+    width: 20% !important;
+    margin: 0.75rem;
+    min-width: 13rem;
+    min-height: 9rem;
+    border-radius: 1rem;
+    border: rgba(51, 51, 51, 0.32) solid 0px;
+    box-shadow: rgba(51, 51, 51, 0.16) 0px 5px 20px -10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 1rem; }
+    .boxesContainer .labelBox:hover {
+      box-shadow: rgba(51, 51, 51, 0.64) 0px 5px 20px -10px; }
+    .boxesContainer .labelBox.selected {
+      color: #2f80ed;
+      border-radius: 0.5rem;
+      border: #2f80ed solid 2px; }
+
 body {
   overflow-x: hidden;
   margin: 0;

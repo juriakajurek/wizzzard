@@ -234,3 +234,34 @@
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
 }
+
+.boxesContainer {
+    margin-top: 1rem;
+    justify-content: flex-start;
+    .labelBox {
+        display: flex;
+        width: 20% !important;
+        margin: 0.75rem;
+        // padding: 0.25rem;
+        min-width: 13rem;
+        min-height: 9rem;
+
+        border-radius: 1rem;
+        border: rgba($primary-color, 0.32) solid 0px;
+        box-shadow: rgba($primary-color, 0.16) 0px 5px 20px -10px;
+        cursor: pointer;
+        &:hover {
+            box-shadow: rgba($primary-color, 0.64) 0px 5px 20px -10px;
+        }
+        &.selected {
+            color: $link-color;
+            border-radius: 0.5rem;
+            border: $link-color solid 2px;
+            // box-shadow: rgba($primary-color, 0.16) 0px 5px 20px -10px;
+        }
+
+        justify-content: center;
+        align-items: flex-end;
+        padding: 1rem;
+    }
+}
