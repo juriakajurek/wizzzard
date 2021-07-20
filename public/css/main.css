@@ -48,7 +48,7 @@
   border-color: #2f80ed !important;
   border-radius: 0.5rem; }
   .btn-primary span {
-    font-weight: 500;
+    font-weight: 400;
     margin-left: 0.5rem;
     font-size: 1rem; }
 
@@ -72,19 +72,21 @@
       padding-bottom: 4rem; }
       .top-container .content .section .section-header {
         color: #333333;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 1.5rem;
         line-height: 2rem;
-        letter-spacing: 0%; }
+        margin-bottom: 0; }
 
-.form-row .form-group label {
-  color: #333333;
-  font-weight: 600;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  letter-spacing: 0px;
-  padding-bottom: 0%;
-  margin-bottom: 0; }
+.form {
+  margin-top: 2rem; }
+  .form .form-row .form-group label {
+    color: #333333;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0px;
+    padding-bottom: 0%;
+    margin-bottom: 0; }
 
 .diseases-form {
   margin-top: 2rem;
@@ -97,13 +99,14 @@
     line-height: 1.5rem;
     letter-spacing: 0%;
     margin-bottom: 1.5rem; }
-  .diseases-form .form-check-row {
+  .diseases-form .form-check-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center; }
-    .diseases-form .form-check-row .form-check {
-      width: 32%; }
+    flex-wrap: wrap; }
+    .diseases-form .form-check-container .form-check {
+      width: 32%;
+      min-width: 18rem; }
 
 .form-check-label {
   color: #333333;
@@ -112,10 +115,13 @@
   line-height: 1.5rem;
   letter-spacing: 0px;
   margin-bottom: 1.5rem;
-  margin-left: 1rem; }
+  margin-left: 1rem;
+  width: auto; }
   .form-check-label div {
     opacity: 0.64;
     display: inline; }
+    .form-check-label div * {
+      position: absolute; }
 
 .form-check-label input:checked ~ div {
   opacity: 1 !important; }
@@ -192,7 +198,7 @@
   -o-transition: all 0.3s ease-out; }
 
 .boxesContainer {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   justify-content: flex-start; }
   .boxesContainer .labelBox {
     display: flex;
@@ -212,7 +218,44 @@
     .boxesContainer .labelBox.selected {
       color: #2f80ed;
       border-radius: 0.5rem;
-      border: #2f80ed solid 2px; }
+      border: #2f80ed solid 2px;
+      padding: calc(1rem - 2px) !important; }
+
+.nomenclature-header {
+  color: #333333;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem; }
+
+.labels-container .square-label {
+  background-color: #eef5fe;
+  border-radius: 0.5rem;
+  height: auto;
+  min-height: 2.5rem;
+  width: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 0.25rem;
+  cursor: pointer;
+  color: #2f80ed;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: 400; }
+  .labels-container .square-label.selected {
+    background-color: #2f80ed;
+    color: white; }
+
+.checkboxes-container {
+  margin: 0.25rem;
+  margin-left: 0.875rem;
+  margin-top: 2rem; }
+  .checkboxes-container > * {
+    width: auto;
+    min-width: 13rem; }
 
 body {
   overflow-x: hidden;

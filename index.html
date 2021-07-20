@@ -129,7 +129,7 @@
                     <a href="#">
                         <div
                             class="sidebar-item user selected"
-                            onclick="makeSelected(this, 'user')"
+                            onclick="makeSidebarItemSelected(this, 'user')"
                         >
                             <img
                                 src="./images/icons/user-selected.svg"
@@ -141,7 +141,7 @@
                     <a href="#">
                         <div
                             class="sidebar-item cutlery"
-                            onclick="makeSelected(this, 'cutlery')"
+                            onclick="makeSidebarItemSelected(this, 'cutlery')"
                         >
                             <img
                                 src="./images/icons/cutlery.svg"
@@ -153,7 +153,7 @@
                     <a href="#">
                         <div
                             class="sidebar-item cherries"
-                            onclick="makeSelected(this, 'cherries')"
+                            onclick="makeSidebarItemSelected(this, 'cherries')"
                         >
                             <img
                                 src="./images/icons/cherries.svg"
@@ -165,7 +165,7 @@
                     <a href="#">
                         <div
                             class="sidebar-item pill"
-                            onclick="makeSelected(this, 'pill')"
+                            onclick="makeSidebarItemSelected(this, 'pill')"
                         >
                             <img
                                 src="./images/icons/pill.svg"
@@ -180,9 +180,9 @@
             <!-- /#wrapper -->
             <div class="content">
                 <h2 class="main-header">Karta nowego pacjenta</h2>
-                <div class="section">
+                <div class="section pr-5 mr-5">
                     <h3 class="section-header">1. Podstawowe dane pacjenta</h3>
-                    <form>
+                    <form class="form">
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="inputSex">Płeć: </label>
@@ -267,7 +267,7 @@
                     <h3 class="section-header">2. Dane kliniczne</h3>
                     <div class="diseases-form">
                         <p class="header">Wykaz chorób</p>
-                        <div class="form-check-row">
+                        <div class="form-check-container">
                             <div class="form-check form-check-inline">
                                 <label
                                     class="form-check-label"
@@ -313,8 +313,8 @@
                                     <div>Stłuszczenie wątroby</div></label
                                 >
                             </div>
-                        </div>
-                        <div class="form-check-row">
+
+                            <!-- <div class="form-check-row"> -->
                             <div class="form-check form-check-inline">
                                 <label
                                     class="form-check-label"
@@ -362,8 +362,8 @@
                                     <div>Zaburzenia lipidowe</div></label
                                 >
                             </div>
-                        </div>
-                        <div class="form-check-row">
+                            <!-- </div> -->
+                            <!-- <div class="form-check-row"> -->
                             <div class="form-check form-check-inline">
                                 <label
                                     class="form-check-label"
@@ -409,8 +409,8 @@
                                     <div>Zaparcia</div></label
                                 >
                             </div>
-                        </div>
-                        <div class="form-check-row">
+                            <!-- </div> -->
+                            <!-- <div class="form-check-row"> -->
                             <div class="form-check form-check-inline">
                                 <label
                                     class="form-check-label"
@@ -456,8 +456,8 @@
                                     <div>Zespół jelita drażliwego</div></label
                                 >
                             </div>
-                        </div>
-                        <div class="form-check-row">
+                            <!-- </div> -->
+                            <!-- <div class="form-check-row"> -->
                             <div class="form-check form-check-inline">
                                 <label
                                     class="form-check-label"
@@ -505,8 +505,8 @@
                                     <div>Zespół metaboliczny</div></label
                                 >
                             </div>
-                        </div>
-                        <div class="form-check-row">
+                            <!-- </div> -->
+                            <!-- <div class="form-check-row"> -->
                             <div class="form-check form-check-inline">
                                 <label
                                     class="form-check-label"
@@ -537,6 +537,7 @@
                                     <div>Refluks</div>
                                 </label>
                             </div>
+                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
@@ -554,23 +555,369 @@
                             flex-wrap
                         "
                     >
-                        <div class="labelBox">Ubogoenergetyczna</div>
-                        <div class="labelBox">Wysokoenergetyczna</div>
-                        <div class="labelBox">Normoenergetyczna</div>
-                        <div class="labelBox selected">Lecznicza</div>
-                        <div class="labelBox">Dla kobiet ciężarnych</div>
-                        <div class="labelBox">Dla kobiet karmiących</div>
-                        <div class="labelBox">Dieta w sporcie</div>
+                        <div class="labelBox" onclick="toggleSelect(this)">
+                            Ubogoenergetyczna
+                        </div>
+                        <div class="labelBox" onclick="toggleSelect(this)">
+                            Wysokoenergetyczna
+                        </div>
+                        <div class="labelBox" onclick="toggleSelect(this)">
+                            Normoenergetyczna
+                        </div>
+                        <div
+                            class="labelBox selected"
+                            onclick="toggleSelect(this)"
+                        >
+                            Lecznicza
+                        </div>
+                        <div class="labelBox" onclick="toggleSelect(this)">
+                            Dla kobiet ciężarnych
+                        </div>
+                        <div class="labelBox" onclick="toggleSelect(this)">
+                            Dla kobiet karmiących
+                        </div>
+                        <div class="labelBox" onclick="toggleSelect(this)">
+                            Dieta w sporcie
+                        </div>
                     </div>
                 </div>
 
-                <!-- <div class="divider"></div>
+                <div class="divider"></div>
 
                 <div class="section">
                     <h3 class="section-header">4. Nomenklatury diet</h3>
-                    <div class=""></div>
+
+                    <p class="nomenclature-header">
+                        Diety wybrane dla jednostek chorobowych: nadciśnienie
+                    </p>
+                    <div
+                        class="labels-container w-100 d-flex flex-row flex-wrap"
+                    >
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            bogatoresztkowa
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            bezglutenowa
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            kardioprotekcyjna
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            łatwostrawna
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            łatwostrawna bogatobiałkowa
+                        </div>
+                    </div>
+
+                    <p class="nomenclature-header">Pozostałe diety</p>
+                    <div
+                        class="labels-container w-100 d-flex flex-row flex-wrap"
+                    >
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            łatwostrawna niskobiałkowa
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            łatwostrawna z ograniczeniem substancji
+                            pobudzających wydzielanie soków żołądkowych
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            łatwostrawna z ograniczeniem tłuszczu
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            niskopurynowa
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            o kontrolowanej zawartości kwsów tłuszczowych
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            o zmiennej konsystencji
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            paleo
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            ubogokaloryczna
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            wegetariańska
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            wegańska
+                        </div>
+                        <div
+                            class="
+                                square-label
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                            "
+                            onclick="toggleSelect(this)"
+                        >
+                            z ograniczeniem łatwoprzyswajalnych węglowodanów
+                        </div>
+                    </div>
+
+                    <p class="nomenclature-header">
+                        Preferowany rodzaj obróbki termicznej
+                    </p>
+                    <div
+                        class="
+                            checkboxes-container
+                            w-100
+                            d-flex
+                            flex-row flex-wrap
+                        "
+                    >
+                        <div class="form-check form-check-inline">
+                            <label
+                                class="form-check-label"
+                                for="term-checkbox1"
+                            >
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="term-checkbox1"
+                                    value="term-option1"
+                                />
+                                <span class="custom-checkbox"></span>
+                                <div>Smażone</div></label
+                            >
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label
+                                class="form-check-label"
+                                for="term-checkbox2"
+                            >
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="term-checkbox2"
+                                    value="term-option2"
+                                />
+                                <span class="custom-checkbox"></span>
+                                <div>Pieczone</div></label
+                            >
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label
+                                class="form-check-label"
+                                for="term-checkbox3"
+                            >
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="term-checkbox3"
+                                    value="term-option3"
+                                />
+                                <span class="custom-checkbox"></span>
+                                <div>Gotowane</div></label
+                            >
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label
+                                class="form-check-label"
+                                for="term-checkbox4"
+                            >
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="term-checkbox4"
+                                    value="term-option4"
+                                />
+                                <span class="custom-checkbox"></span>
+                                <div>Duszone</div></label
+                            >
+                        </div>
+                    </div>
+
+                    <p class="nomenclature-header">Czas przygotowania potraw</p>
+                    <div
+                        class="
+                            checkboxes-container
+                            w-100
+                            d-flex
+                            flex-row flex-wrap
+                        "
+                    >
+                        <div class="form-check form-check-inline col-md-2">
+                            <label
+                                class="form-check-label"
+                                for="time-checkbox1"
+                            >
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="time-checkbox1"
+                                    value="time-option1"
+                                />
+                                <span class="custom-checkbox"></span>
+                                <div>do 30 min.</div></label
+                            >
+                        </div>
+                        <div class="form-check form-check-inline col-md-2">
+                            <label
+                                class="form-check-label"
+                                for="time-checkbox2"
+                            >
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="time-checkbox2"
+                                    value="time-option2"
+                                />
+                                <span class="custom-checkbox"></span>
+                                <div>30-60 min.</div></label
+                            >
+                        </div>
+                        <div
+                            class="
+                                form-check form-check-inline
+                                col-md-2 col-sm-3
+                            "
+                        >
+                            <label
+                                class="form-check-label"
+                                for="time-checkbox3"
+                            >
+                                <input
+                                    class="form-check-input checkbox"
+                                    type="checkbox"
+                                    id="time-checkbox3"
+                                    value="time-option3"
+                                />
+                                <span class="custom-checkbox"></span>
+                                <div>powyżej 60 min.</div></label
+                            >
+                        </div>
+                    </div>
+                    <div class="exclusions mt-4 pt-2">
+                        <p class="nomenclature-header">
+                            Zarządzanie wykluczeniami i wyjątkami
+                        </p>
+                    </div>
                 </div>
-                <div class="divider"></div>
+                <!-- <div class="divider"></div>
 
                 <div class="section">
                     <h3 class="section-header">5. Posiłki</h3>

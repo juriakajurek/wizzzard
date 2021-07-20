@@ -6,7 +6,7 @@ $(function () {
     })
 })
 
-function makeSelected(el, itemName) {
+function makeSidebarItemSelected(el, itemName) {
     let list = el.parentNode.parentNode.children
     for (let item of list) {
         item.children[0].classList.remove('selected')
@@ -43,6 +43,10 @@ function makeSelected(el, itemName) {
         `./images/icons/${itemName}-selected.svg`
     )
     return el.classList.add('selected')
+}
+
+function toggleSelect(el) {
+    return el.classList.toggle('selected')
 }
 
 document.addEventListener('DOMContentLoaded', function () {
