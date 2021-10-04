@@ -8,6 +8,11 @@
     visibility: hidden;
     position: absolute; } }
 
+@media (max-width: 1220px) {
+  .advanced-hours-settings {
+    visibility: hidden;
+    position: absolute; } }
+
 .divider {
   width: 200%;
   height: 1.12px;
@@ -15,6 +20,11 @@
   opacity: 0.08;
   position: relative;
   left: -50%; }
+  .divider.small-divider {
+    width: 100%;
+    left: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
 
 .user .user-image {
   width: 1.5rem;
@@ -69,7 +79,7 @@
   .top-container .content {
     margin-top: 1.5rem;
     width: 75%;
-    height: 800vh; }
+    height: auto; }
     .top-container .content .main-header {
       margin-top: 5rem;
       color: #333333;
@@ -80,6 +90,13 @@
     .top-container .content .section {
       padding-top: 4rem;
       padding-bottom: 4rem; }
+      .top-container .content .section.gray {
+        background-color: #fdfdfd;
+        position: relative;
+        margin-left: -50rem;
+        margin-right: -50rem;
+        padding-left: 50rem;
+        padding-right: 50rem; }
       .top-container .content .section .section-header {
         color: #333333;
         font-weight: 600;
@@ -308,18 +325,15 @@
   z-index: 2; }
 
 .search-results {
+  position: absolute;
   z-index: 1;
   height: auto !important;
-  position: absolute;
-  width: 75%;
-  height: 400px;
   background-color: white;
   border: solid #dedede 1px;
   border-radius: 1.5rem; }
   .search-results.hidden {
     visibility: hidden; }
   .search-results .search-results-container {
-    width: 100%;
     height: auto;
     padding: 2rem;
     padding-top: 4.5rem; }
@@ -385,6 +399,14 @@
       color: #333333; }
   .exclusions-container .card {
     border-radius: 1.5rem; }
+    .exclusions-container .card .card-header a {
+      color: rgba(51, 51, 51, 0.8);
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      letter-spacing: 0px; }
+      .exclusions-container .card .card-header a.active {
+        color: #2f80ed; }
     .exclusions-container .card .card-header {
       border-top-left-radius: 1.5rem;
       border-top-right-radius: 1.5rem;
@@ -395,15 +417,18 @@
       .exclusions-container .card .card-header .nav-item {
         border: none; }
         .exclusions-container .card .card-header .nav-item .nav-link {
-          border: none;
-          color: rgba(51, 51, 51, 0.8);
-          font-weight: 400;
-          font-size: 0.875rem;
-          line-height: 1.25rem;
-          letter-spacing: 0px; }
-          .exclusions-container .card .card-header .nav-item .nav-link.active {
-            border: none;
-            color: #2f80ed; }
+          border: none; }
+        .exclusions-container .card .card-header .nav-item .underline {
+          visibility: hidden;
+          position: absolute; }
+          .exclusions-container .card .card-header .nav-item .underline.visible {
+            visibility: visible;
+            width: 80%;
+            position: relative;
+            top: 0.57rem;
+            left: 10%;
+            height: 2px;
+            background-color: #2f80ed; }
     .exclusions-container .card .card-body {
       display: flex;
       flex-direction: row;
@@ -514,10 +539,11 @@
 .number-input {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  padding-right: 0.5rem !important;
   width: auto;
   max-width: 8rem;
-  background-color: #f8f8f8;
-  border: none;
+  border: solid 1px #bebebe;
+  border-radius: 0.5rem;
   color: #333333;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -530,6 +556,13 @@
 
 .form-control[readonly] {
   background-color: white !important; }
+
+.meals .meal-hours-chooser {
+  margin-top: 3rem;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.7s ease; }
 
 .meals .header-row {
   margin-bottom: 1.5rem; }
@@ -554,8 +587,11 @@
       margin-left: 0; }
       .meals .meal-row.column-header div p span {
         white-space: nowrap; }
+  .meals .meal-row.column-header.meal-hours-header {
+    justify-content: space-around; }
 
 .meals .meal-row .meal-col {
+  height: auto;
   margin: 0;
   padding: 0;
   display: flex;
@@ -574,6 +610,7 @@
       background-color: rgba(226, 27, 27, 0.08);
       border-radius: 50%; }
   .meals .meal-row .meal-col.meal-name {
+    width: 10rem;
     color: #333333;
     font-weight: 600;
     font-size: 1rem;
@@ -604,6 +641,142 @@
   .meals .meal-row .meal-col p {
     margin-left: 0;
     margin-bottom: 0; }
+
+.meals .meal-row.meal-hours-row {
+  justify-content: space-around; }
+
+.meals .meal-row.header-offset {
+  width: 10rem !important; }
+
+.macronutrients {
+  background-color: transparent;
+  border: none; }
+  .macronutrients .card-header {
+    background-color: transparent;
+    padding-bottom: 1rem; }
+  .macronutrients .card-header a {
+    color: rgba(51, 51, 51, 0.64);
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0px; }
+    .macronutrients .card-header a.active {
+      color: #2f80ed; }
+  .macronutrients .nav-item {
+    border: none; }
+    .macronutrients .nav-item .nav-link {
+      background-color: transparent;
+      border: none; }
+  .macronutrients .card-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .macronutrients .card-body.hidden {
+      visibility: hidden;
+      position: absolute; }
+  .macronutrients #macronutrients-settings-card {
+    padding-right: 0;
+    padding-left: 0; }
+    .macronutrients #macronutrients-settings-card .number-input {
+      padding: 0;
+      height: 2rem;
+      width: 6rem; }
+    .macronutrients #macronutrients-settings-card .card {
+      border-radius: 1.5rem; }
+    .macronutrients #macronutrients-settings-card .macronutrients-dropdown {
+      height: 2.5rem; }
+      .macronutrients #macronutrients-settings-card .macronutrients-dropdown .btn {
+        color: #333333 !important;
+        border-color: #dedede;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        margin-top: 0.25rem;
+        margin-left: 0 !important;
+        border-radius: 0.5rem; }
+        .macronutrients #macronutrients-settings-card .macronutrients-dropdown .btn .triangle {
+          width: 0;
+          height: 0;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 4px solid white;
+          position: absolute;
+          right: 0.62rem;
+          top: 1.1rem;
+          z-index: 2; }
+        .macronutrients #macronutrients-settings-card .macronutrients-dropdown .btn::after {
+          font-size: 1.25rem;
+          position: absolute;
+          right: 0.5rem;
+          top: 1.1rem;
+          border-radius: 2px; }
+    .macronutrients #macronutrients-settings-card .card-header {
+      border-top-left-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
+      background-color: rgba(51, 51, 51, 0.03); }
+      .macronutrients #macronutrients-settings-card .card-header .form {
+        margin-right: 10%; }
+        .macronutrients #macronutrients-settings-card .card-header .form .form-group {
+          display: flex;
+          flex-direction: column; }
+    .macronutrients #macronutrients-settings-card .body {
+      width: 100%;
+      align-items: center; }
+      .macronutrients #macronutrients-settings-card .body .row {
+        width: 100%; }
+        .macronutrients #macronutrients-settings-card .body .row.summary-row .dropdown-toggle {
+          border-color: #bebebe !important; }
+        .macronutrients #macronutrients-settings-card .body .row.summary-row .number-input {
+          border-color: #bebebe !important; }
+        .macronutrients #macronutrients-settings-card .body .row .row-header {
+          max-width: 18%;
+          color: rgba(51, 51, 51, 0.48);
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 1.5rem;
+          letter-spacing: 0px; }
+        .macronutrients #macronutrients-settings-card .body .row .col {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          width: 20%;
+          height: 4.4rem;
+          border: solid 0.5px #f1efef; }
+          .macronutrients #macronutrients-settings-card .body .row .col .number-input {
+            border-color: rgba(51, 51, 51, 0.08); }
+          .macronutrients #macronutrients-settings-card .body .row .col:not(.row-header) {
+            padding-left: 2rem; }
+          .macronutrients #macronutrients-settings-card .body .row .col .macronutrients-dropdown {
+            width: 30%;
+            padding-right: 1rem; }
+          .macronutrients #macronutrients-settings-card .body .row .col.col-header {
+            color: #333333;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            letter-spacing: 0px; }
+            .macronutrients #macronutrients-settings-card .body .row .col.col-header .hint {
+              padding-left: 1rem;
+              color: rgba(51, 51, 51, 0.32);
+              font-weight: 400;
+              font-size: 0.875rem;
+              line-height: 0.875rem;
+              letter-spacing: 0px; }
+  .macronutrients #advanced-macronutrients-settings .form {
+    margin-top: 0; }
+  .macronutrients .underline {
+    visibility: hidden;
+    position: absolute; }
+    .macronutrients .underline.visible {
+      visibility: visible;
+      width: 90%;
+      position: relative;
+      top: 0.37rem;
+      left: 5%;
+      height: 2px;
+      background-color: #2f80ed; }
 
 .activities .form-check-input {
   position: relative;
@@ -768,6 +941,21 @@
   .add-row-button.add-parameter {
     margin-top: -0.4rem !important;
     margin-left: 0.3rem !important; }
+
+.radios-container {
+  display: flex;
+  flex-direction: row; }
+  .radios-container input[type='radio'] {
+    transform: scale(2.8);
+    margin: 0.5rem; }
+    .radios-container input[type='radio'] ~ label {
+      padding-left: 2.8rem;
+      margin-top: 0.15rem !important;
+      margin-bottom: 0 !important;
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      letter-spacing: 0px; }
 
 .save-button {
   font-weight: 400;

@@ -20,6 +20,13 @@
     }
 }
 
+@media (max-width: 1220px) {
+    .advanced-hours-settings {
+        visibility: hidden;
+        position: absolute;
+    }
+}
+
 .divider {
     width: 200%;
     height: 1.12px;
@@ -27,6 +34,12 @@
     opacity: 0.08;
     position: relative;
     left: -50%;
+    &.small-divider {
+        width: 100%;
+        left: 0;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 
 .user {
@@ -97,7 +110,7 @@
         // z-index: 2;
         margin-top: 1.5rem;
         width: 75%;
-        height: 800vh; //!TODO auto!
+        height: auto;
         .main-header {
             margin-top: 5rem;
             color: $primary-color;
@@ -109,6 +122,15 @@
         .section {
             padding-top: 4rem;
             padding-bottom: 4rem;
+
+            &.gray {
+                background-color: $section-gray;
+                position: relative;
+                margin-left: -50rem;
+                margin-right: -50rem;
+                padding-left: 50rem;
+                padding-right: 50rem;
+            }
             .section-header {
                 color: $primary-color;
                 font-weight: 600;
@@ -386,24 +408,17 @@
     z-index: 2;
 }
 .search-results {
+    position: absolute;
     z-index: 1;
     height: auto !important;
-
-    &.hidden {
-        visibility: hidden;
-    }
-    position: absolute;
-    width: 75%;
-    height: 400px;
-
     background-color: white;
     border: solid $more-aloof-gray 1px;
     border-radius: 1.5rem;
+    &.hidden {
+        visibility: hidden;
+    }
     .search-results-container {
-        width: 100%;
-        // height: 100%;
         height: auto;
-
         padding: 2rem;
         padding-top: 4.5rem;
         .search-results-header {
@@ -487,6 +502,20 @@
     }
     .card {
         border-radius: 1.5rem;
+
+        .card-header a {
+            color: rgba($primary-color, 0.8);
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            letter-spacing: 0px;
+            // &:active {
+            //     color: red;
+            // }
+            &.active {
+                color: $link-color;
+            }
+        }
         .card-header {
             border-top-left-radius: 1.5rem;
             border-top-right-radius: 1.5rem;
@@ -499,16 +528,20 @@
                 border: none;
                 .nav-link {
                     border: none;
+                }
 
-                    color: rgba($primary-color, 0.8);
-
-                    font-weight: 400;
-                    font-size: 0.875rem;
-                    line-height: 1.25rem;
-                    letter-spacing: 0px;
-                    &.active {
-                        border: none;
-                        color: $link-color;
+                .underline {
+                    // margin-top: 1rem;
+                    visibility: hidden;
+                    position: absolute;
+                    &.visible {
+                        visibility: visible;
+                        width: 80%;
+                        position: relative;
+                        top: 0.57rem;
+                        left: 10%;
+                        height: 2px;
+                        background-color: $link-color;
                     }
                 }
             }
@@ -681,10 +714,12 @@
 .number-input {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+    padding-right: 0.5rem !important;
     width: auto;
     max-width: 8rem;
-    background-color: $light-gray;
-    border: none;
+    // background-color: $light-gray;
+    border: solid 1px $input-border-gray;
+    border-radius: 0.5rem;
     color: $primary-color;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -707,6 +742,15 @@
 }
 
 .meals {
+    .meal-hours-chooser {
+        margin-top: 3rem;
+
+        visibility: hidden;
+        position: absolute;
+        opacity: 0;
+        // transition: all 2s ease;
+        transition: opacity 0.7s ease;
+    }
     .header-row {
         margin-bottom: 1.5rem;
     }
@@ -736,8 +780,12 @@
                     }
                 }
             }
+            &.meal-hours-header {
+                justify-content: space-around;
+            }
         }
         .meal-col {
+            height: auto;
             margin: 0;
             padding: 0;
             // border: solid 1px red;
@@ -763,6 +811,7 @@
                 }
             }
             &.meal-name {
+                width: 10rem;
                 color: $primary-color;
                 font-weight: 600;
                 font-size: 1rem;
@@ -801,6 +850,186 @@
                 margin-left: 0;
                 margin-bottom: 0;
             }
+        }
+        &.meal-hours-row {
+            justify-content: space-around;
+        }
+        &.header-offset {
+            width: 10rem !important;
+        }
+    }
+}
+
+.macronutrients {
+    background-color: transparent;
+    border: none;
+    .card-header {
+        background-color: transparent;
+        padding-bottom: 1rem;
+    }
+    .card-header a {
+        color: rgba($primary-color, 0.64);
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        letter-spacing: 0px;
+        &.active {
+            color: $link-color;
+        }
+    }
+    .nav-item {
+        border: none;
+        .nav-link {
+            background-color: transparent;
+            border: none;
+        }
+    }
+    .card-body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &.hidden {
+            visibility: hidden;
+            position: absolute;
+        }
+    }
+    #macronutrients-settings-card {
+        padding-right: 0;
+        padding-left: 0;
+        .number-input {
+            padding: 0;
+            height: 2rem;
+            width: 6rem;
+        }
+        .card {
+            border-radius: 1.5rem;
+        }
+        .macronutrients-dropdown {
+            height: 2.5rem;
+            .btn {
+                color: $primary-color !important;
+                border-color: $more-aloof-gray;
+                background-color: white;
+                display: flex;
+                flex-direction: row;
+                overflow: hidden;
+                margin-top: 0.25rem;
+                margin-left: 0 !important;
+                border-radius: 0.5rem;
+                .triangle {
+                    width: 0;
+                    height: 0;
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
+                    border-top: 4px solid white;
+                    position: absolute;
+                    right: 0.62rem;
+                    top: 1.1rem;
+                    z-index: 2;
+                }
+                &::after {
+                    font-size: 1.25rem;
+
+                    position: absolute;
+                    right: 0.5rem;
+                    top: 1.1rem;
+                    border-radius: 2px;
+                }
+            }
+        }
+        .card-header {
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+
+            background-color: rgba($primary-color, 0.03);
+            .form {
+                margin-right: 10%;
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        .body {
+            width: 100%;
+            align-items: center;
+
+            .row {
+                &.summary-row {
+                    .dropdown-toggle {
+                        border-color: $input-border-gray !important;
+                    }
+                    .number-input {
+                        border-color: $input-border-gray !important;
+                    }
+                }
+                width: 100%;
+                .row-header {
+                    max-width: 18%;
+                    color: rgba($primary-color, 0.48);
+                    font-weight: 400;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    letter-spacing: 0px;
+                }
+                .col {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 20%;
+                    height: 4.4rem;
+                    border: solid 0.5px $grid-gray;
+                    .number-input {
+                        border-color: rgba($primary-color, 0.08);
+                    }
+                    &:not(.row-header) {
+                        padding-left: 2rem;
+                    }
+                    .macronutrients-dropdown {
+                        width: 30%;
+                        padding-right: 1rem;
+                    }
+                    &.col-header {
+                        color: rgba($primary-color, 1);
+                        font-weight: 600;
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                        letter-spacing: 0px;
+                        .hint {
+                            padding-left: 1rem;
+                            color: rgba($primary-color, 0.32);
+                            font-weight: 400;
+                            font-size: 0.875rem;
+                            line-height: 0.875rem;
+                            letter-spacing: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #advanced-macronutrients-settings {
+        .form {
+            margin-top: 0;
+            .row {
+                // padding-top: 1rem;
+                // padding-bottom: 1rem;
+            }
+        }
+    }
+    .underline {
+        visibility: hidden;
+        position: absolute;
+        &.visible {
+            visibility: visible;
+            width: 90%;
+            position: relative;
+            top: 0.37rem;
+            left: 5%;
+            height: 2px;
+            background-color: $link-color;
         }
     }
 }
@@ -1030,6 +1259,25 @@
     &.add-parameter {
         margin-top: -0.4rem !important;
         margin-left: 0.3rem !important;
+    }
+}
+
+.radios-container {
+    display: flex;
+    flex-direction: row;
+    input[type='radio'] {
+        transform: scale(2.8);
+        margin: 0.5rem;
+        & ~ label {
+            padding-left: 2.8rem;
+            margin-top: 0.15rem !important;
+            margin-bottom: 0 !important;
+
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.5rem;
+            letter-spacing: 0px;
+        }
     }
 }
 

@@ -83,6 +83,10 @@ $(function () {
 //     })
 // })
 document.addEventListener('click', function (e) {
+    // console.log(
+    //     ($('#exclusions-input')[0].parentNode.children[0].offsetWidth =
+    //         $('#exclusions-input')[0].parentNode.offsetWidth)
+    // )
     if (e.target != $('#exclusions-input')[0]) {
         let element = e.target
         let shouldClose = true
@@ -97,6 +101,24 @@ document.addEventListener('click', function (e) {
                 'hidden'
             )
         }
+    }
+    if (e.target == $('#same-meals-hours')[0]) {
+        $('#meal-hours-chooser').css('opacity', '0')
+        $('.basic-hour-input').each((index, element) => {
+            $(element).removeAttr('disabled')
+        })
+        setTimeout(() => {
+            $('#meal-hours-chooser').css('visibility', 'hidden')
+            $('#meal-hours-chooser').css('position', 'absolute')
+        }, 500)
+    }
+    if (e.target == $('#various-meals-hours')[0]) {
+        $('#meal-hours-chooser').css('visibility', 'visible')
+        $('#meal-hours-chooser').css('position', 'relative')
+        $('#meal-hours-chooser').css('opacity', '1')
+        $('.basic-hour-input').each((index, element) => {
+            $(element).attr('disabled', 'true')
+        })
     }
 })
 
@@ -153,16 +175,27 @@ function toggleActive(el) {
     let menuItems = el.parentNode.parentNode.children
     for (i = 0; i < menuItems.length; i++) {
         menuItems[i].children[0].classList.remove('active')
+        menuItems[i].children[1].classList.remove('visible')
     }
     if (el.innerHTML.indexOf('wykluczeń') != -1) {
         //wykluczenia
         $('#exclusions-list')[0].classList.remove('hidden')
         $('#exceptions-list')[0].classList.add('hidden')
-    } else {
+    } else if (el.innerHTML.indexOf('wyjątków') != -1) {
         //wyjątki
         $('#exclusions-list')[0].classList.add('hidden')
         $('#exceptions-list')[0].classList.remove('hidden')
+    } else if (el.innerHTML.indexOf('zapotrzebowania') != -1) {
+        //ustawienie zapotrzebowania
+        $('#advanced-macronutrients-settings')[0].classList.add('hidden')
+        $('#macronutrients-settings-card')[0].classList.remove('hidden')
+    } else if (el.innerHTML.indexOf('per posiłek') != -1) {
+        //Przydział wartości per posiłek
+        $('#macronutrients-settings-card')[0].classList.add('hidden')
+        $('#advanced-macronutrients-settings')[0].classList.remove('hidden')
     }
+
+    el.nextElementSibling.classList.add('visible')
     return el.classList.add('active')
 }
 
