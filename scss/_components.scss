@@ -243,14 +243,14 @@
     padding: 0;
 }
 .form-check-label input:checked ~ .custom-checkbox {
-    background-color: $link-color;
+    background-color: $main-purple;
+    border: 2px solid $main-purple;
     border-radius: 0.5rem;
 
     -webkit-transform: rotate(0deg) scale(1);
     -ms-transform: rotate(0deg) scale(1);
     transform: rotate(0deg) scale(1);
     opacity: 1;
-    border: 2px solid $link-color;
 }
 
 .form-check-label .custom-checkbox::after {
@@ -956,6 +956,10 @@
 
             .row {
                 &.summary-row {
+                    height: 5.5rem;
+                    .col {
+                        height: 100%;
+                    }
                     .dropdown-toggle {
                         border-color: $input-border-gray !important;
                     }
@@ -981,7 +985,15 @@
                     height: 4.4rem;
                     border: solid 0.5px $grid-gray;
                     .number-input {
+                        &:disabled {
+                            opacity: 0.4;
+                        }
                         border-color: rgba($primary-color, 0.08);
+                        height: 2.5rem;
+                    }
+                    .dropdown-toggle {
+                        height: 2.5rem;
+                        margin: 0;
                     }
                     &:not(.row-header) {
                         padding-left: 2rem;
@@ -1011,10 +1023,24 @@
     }
 
     #advanced-macronutrients-settings {
-        .form {
-            margin-top: 0;
-            .row {
-                // padding-top: 1rem;
+        .meal-col {
+            height: 4.5rem;
+            .form {
+                margin-top: 0;
+                label {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .form-row {
+                    .number-input {
+                        border-color: $input-border-gray;
+                        height: 2.5rem;
+                        width: auto;
+                    }
+                    // padding-top: 1rem;
+                }
             }
         }
     }
