@@ -1,4 +1,19 @@
+@charset "UTF-8";
+@media (max-width: 650px) {
+  .underline {
+    visibility: hidden !important; } }
+
 @media (max-width: 992px) {
+  .activities .col-sm-1 {
+    visibility: hidden !important;
+    position: absolute; }
+    .activities .col-sm-1 .connector {
+      visibility: hidden !important; }
+  .macronutrients {
+    visibility: hidden;
+    position: absolute; }
+    .macronutrients * {
+      visibility: hidden !important; }
   .meal-col {
     width: 50% !important; }
     .meal-col.form-check {
@@ -12,6 +27,41 @@
   .advanced-hours-settings {
     visibility: hidden;
     position: absolute; } }
+
+@media (max-width: 1130px) {
+  #macronutrients-settings-card .body .row .col:not(.row-header) {
+    padding-left: 0.1rem !important; } }
+
+@media (max-width: 1500px) {
+  #advanced-macronutrients-settings .meal-col {
+    height: auto !important; }
+    #advanced-macronutrients-settings .meal-col .form .form-row {
+      justify-content: flex-end !important; } }
+
+.timepicker {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;
+  width: auto;
+  max-width: 8rem;
+  border: solid 1px #bebebe;
+  border-radius: 0.5rem;
+  color: #333333;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0px; }
+
+.timeinput-clock::after {
+  position: absolute;
+  content: '↕';
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 0.85;
+  left: 6.8rem;
+  top: 1rem;
+  width: 10px;
+  height: 32px;
+  font-weight: 800; }
 
 .divider {
   width: 200%;

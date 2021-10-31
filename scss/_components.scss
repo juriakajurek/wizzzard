@@ -1,6 +1,31 @@
 @import 'base';
 
+@media (max-width: 650px) {
+    .underline {
+        visibility: hidden !important;
+    }
+}
+
 @media (max-width: 992px) {
+    .activities {
+        .col-sm-1 {
+            visibility: hidden !important;
+            position: absolute;
+            .connector {
+                visibility: hidden !important;
+            }
+        }
+        .d-inline-block {
+            // visibility: hidden !important;
+        }
+    }
+    .macronutrients {
+        visibility: hidden;
+        position: absolute;
+        * {
+            visibility: hidden !important;
+        }
+    }
     .meal-col {
         width: 50% !important;
 
@@ -25,6 +50,62 @@
         visibility: hidden;
         position: absolute;
     }
+}
+
+@media (max-width: 1130px) {
+    #macronutrients-settings-card {
+        .body {
+            .row {
+                .col {
+                    &:not(.row-header) {
+                        padding-left: 0.1rem !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    #advanced-macronutrients-settings {
+        .meal-col {
+            height: auto !important;
+            .form {
+                .form-row {
+                    justify-content: flex-end !important;
+                }
+            }
+        }
+    }
+}
+
+.timepicker {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+    // padding-right: 0.5rem !important;
+    width: auto;
+    max-width: 8rem;
+    // background-color: $light-gray;
+    border: solid 1px $input-border-gray;
+    border-radius: 0.5rem;
+    color: $primary-color;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0px;
+    // text-align: right !important;
+}
+.timeinput-clock::after {
+    position: absolute;
+    content: '↕';
+    font-size: 1rem;
+    font-weight: bold;
+    opacity: 0.85;
+    left: 6.8rem;
+    top: 1rem;
+    width: 10px;
+    height: 32px;
+    font-weight: 800;
 }
 
 .divider {
@@ -654,9 +735,7 @@
                     .measurement-dropdown {
                         width: auto;
                         width: 100%;
-                        // margin-left: 0;
-                        // margin-right: 0;
-                        // height: 1px;
+                        // overflow: hidden;
                         .btn {
                             color: $primary-color !important;
                             border-color: rgba($primary-color, 0.32);
@@ -1023,8 +1102,11 @@
     }
 
     #advanced-macronutrients-settings {
+        // .meal-row {
+        // }
         .meal-col {
             height: 4.5rem;
+            // height: auto;
             .form {
                 margin-top: 0;
                 label {

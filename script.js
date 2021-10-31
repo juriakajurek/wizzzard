@@ -1,3 +1,13 @@
+;(function ($) {
+    $(function () {
+        $('input.timepicker').timepicker({
+            timeFormat: 'H:mm',
+            // defaultTime: '7:00',
+            interval: 15,
+        })
+    })
+})(jQuery)
+
 $(function () {
     $('#menu-toggle').click(function (e) {
         e.preventDefault()
@@ -355,7 +365,11 @@ $(document).ready(function () {
 })
 
 $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+    if ($(window).width() < 970) {
+        // alert('Less than 960')
+    } else {
+        $('[data-toggle="tooltip"]').tooltip()
+    }
 })
 
 $(function () {
