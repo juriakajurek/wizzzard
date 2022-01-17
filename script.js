@@ -1,13 +1,3 @@
-;(function ($) {
-    $(function () {
-        $('input.timepicker').timepicker({
-            timeFormat: 'H:mm',
-            // defaultTime: '7:00',
-            interval: 15,
-        })
-    })
-})(jQuery)
-
 $(function () {
     $('#menu-toggle').click(function (e) {
         e.preventDefault()
@@ -107,7 +97,7 @@ document.addEventListener('click', function (e) {
             element = element.parentNode
         }
         if (shouldClose === true) {
-            $('#exclusions-input')[0].parentNode.children[0].classList.add(
+            $('#exclusions-input')[0]?.parentNode.children[0].classList.add(
                 'hidden'
             )
         }
@@ -129,6 +119,24 @@ document.addEventListener('click', function (e) {
         $('.basic-hour-input').each((index, element) => {
             $(element).attr('disabled', 'true')
         })
+    }
+    if (e.target == $('#patient-same-meals-hours')[0]) {
+        $('#various-hours-chooser').css('opacity', '0')
+        $('#various-hours-chooser').css('visibility', 'hidden')
+        $('#various-hours-chooser').css('position', 'absolute')
+
+        $('#same-hours-chooser').css('opacity', '1')
+        $('#same-hours-chooser').css('visibility', 'visible')
+        $('#same-hours-chooser').css('position', 'relative')
+    }
+    if (e.target == $('#patient-various-meals-hours')[0]) {
+        $('#various-hours-chooser').css('opacity', '1')
+        $('#various-hours-chooser').css('visibility', 'visible')
+        $('#various-hours-chooser').css('position', 'relative')
+
+        $('#same-hours-chooser').css('opacity', '0')
+        $('#same-hours-chooser').css('visibility', 'hidden')
+        $('#same-hours-chooser').css('position', 'absolute')
     }
 })
 
@@ -203,6 +211,46 @@ function toggleActive(el) {
         //Przydział wartości per posiłek
         $('#macronutrients-settings-card')[0].classList.add('hidden')
         $('#advanced-macronutrients-settings')[0].classList.remove('hidden')
+    } else if (el.innerHTML.indexOf('i pomiary') != -1) {
+        //Dane i pomiary
+        $('#settings-card')[0].classList.add('hidden')
+        $('#diet-info-card')[0].classList.add('hidden')
+        $('#culinary-tastes-card')[0].classList.add('hidden')
+        $('#activity-plan-card')[0].classList.add('hidden')
+
+        $('#measurements-info-card')[0].classList.remove('hidden')
+    } else if (el.innerHTML.indexOf('Ustawienia') != -1) {
+        //Ustawienia
+        $('#diet-info-card')[0].classList.add('hidden')
+        $('#culinary-tastes-card')[0].classList.add('hidden')
+        $('#activity-plan-card')[0].classList.add('hidden')
+        $('#measurements-info-card')[0].classList.add('hidden')
+
+        $('#settings-card')[0].classList.remove('hidden')
+    } else if (el.innerHTML.indexOf('Dieta') != -1) {
+        //Dieta
+        $('#culinary-tastes-card')[0].classList.add('hidden')
+        $('#activity-plan-card')[0].classList.add('hidden')
+        $('#measurements-info-card')[0].classList.add('hidden')
+        $('#settings-card')[0].classList.add('hidden')
+
+        $('#diet-info-card')[0].classList.remove('hidden')
+    } else if (el.innerHTML.indexOf('Upodobania kulinarne') != -1) {
+        //Upodobania kulinarne
+        $('#diet-info-card')[0].classList.add('hidden')
+        $('#activity-plan-card')[0].classList.add('hidden')
+        $('#measurements-info-card')[0].classList.add('hidden')
+        $('#settings-card')[0].classList.add('hidden')
+
+        $('#culinary-tastes-card')[0].classList.remove('hidden')
+    } else if (el.innerHTML.indexOf('Plan aktywności') != -1) {
+        //Plan aktywności
+        $('#diet-info-card')[0].classList.add('hidden')
+        $('#culinary-tastes-card')[0].classList.add('hidden')
+        $('#measurements-info-card')[0].classList.add('hidden')
+        $('#settings-card')[0].classList.add('hidden')
+
+        $('#activity-plan-card')[0].classList.remove('hidden')
     }
 
     el.nextElementSibling.classList.add('visible')
@@ -307,6 +355,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 $('.datepicker').datepicker()
+
+//change gender name to gender icon
+$(document).ready(function () {
+    var fields = document.querySelectorAll('.patient-gender')
+    fields.forEach((f) => {
+        var img = document.createElement('img')
+        if (f.innerText == 'M') {
+            f.innerText = ''
+            img.setAttribute('src', `./images/icons/man.svg`)
+            f.appendChild(img)
+        } else if (f.innerText == 'K') {
+            f.innerText = ''
+            img.setAttribute('src', `./images/icons/woman.svg`)
+            f.appendChild(img)
+        }
+    })
+})
+
+$(document).ready(function () {
+    $('input.timepicker')?.timepicker({
+        timeFormat: 'H:mm',
+        interval: 15,
+    })
+})
+
 $(document).ready(function () {
     $.fn.datepicker.dates['en'] = {
         days: [
