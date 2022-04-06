@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Program Dietetyczny</title>
+        <link rel="icon" href="./images//logo.svg" type="image/x-icon" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./public/css/main.css" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="./public/css/timepicker.css"
+            type="text/css"
+        />
+    </head>
+
+    <body>
+        <div class="top-container min-vh-100 h-auto max-vw-100 m-0 p-0">
+            <nav class="navbar navbar-light scrolled-up autohide py-0">
+                <div
+                    class="
+                        d-flex
+                        flex-row
+                        brand-side
+                        align-items-center
+                        justify-content-center
+                    "
+                >
+                    <a
+                        class="navbar-brand"
+                        id="menu-toggle"
+                        href="#!menu-toggle"
+                    >
+                        <div id="toggler-container" class="toggled">
+                            <img id="slide" class="toggled" />
+
+                            <img
+                                src="images/hamburger.svg"
+                                alt="logo"
+                                class="navbar-toggle-icon"
+                            />
+                        </div>
+                    </a>
+                    <a
+                        href="/"
+                        class=""
+                        style="text-decoration: none; color: inherit"
+                    >
+                        <div class="brand">Program dietetyczny</div>
+                    </a>
+                </div>
+                <div class="" id="navbarNavAltMarkup">
+                    <div
+                        class="
+                            navbar-nav
+                            my-auto
+                            d-flex
+                            flex-row
+                            align-items-center
+                            justify-content-center
+                        "
+                    >
+                        <a href="#!!" class="menu-item">
+                            <button
+                                type="button"
+                                class="btn btn-primary btn-sm px-4 m-1 py-2"
+                            >
+                                Dodaj nowego pacjenta <span>+</span>
+                            </button>
+                        </a>
+
+                        <a href="/pacjenci.html" class="menu-item">
+                            <img
+                                src="./images/icons/bell.svg"
+                                class="user-image"
+                                alt="..."
+                            />
+                        </a>
+                        <a href="#!!" class="menu-item">
+                            <img
+                                src="./images/icons/exclamation-mark.svg"
+                                class="user-image"
+                                alt="..."
+                            />
+                            <div
+                                class="
+                                    d-flex
+                                    flex-row
+                                    align-items-center
+                                    justify-content-center
+                                "
+                            >
+                                Zgłoś uwagę
+                            </div>
+                        </a>
+
+                        <a href="#!" class="user menu-item">
+                            <img
+                                src="./images/avatar.svg"
+                                class="user-image"
+                                alt="..."
+                            />
+                            <div
+                                class="
+                                    d-flex
+                                    flex-row
+                                    align-items-center
+                                    justify-content-center
+                                "
+                            >
+                                Marcin Winiszewski
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="divider"></div>
+
+            <div id="wrapper" class="toggled">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                    <a href="#!">
+                        <div
+                            class="sidebar-item user selected"
+                            onclick="makeSidebarItemSelected(this, 'user')"
+                        >
+                            <img
+                                src="./images/icons/user-selected.svg"
+                                class="user-image"
+                                alt="Karta pacjenta"
+                            />
+                        </div>
+                    </a>
+                    <a href="#!">
+                        <div
+                            class="sidebar-item cutlery"
+                            onclick="makeSidebarItemSelected(this, 'cutlery')"
+                        >
+                            <img
+                                src="./images/icons/cutlery.svg"
+                                class="user-image"
+                                alt="Jadłospisy"
+                            />
+                        </div>
+                    </a>
+                    <a href="#!">
+                        <div
+                            class="sidebar-item cherries"
+                            onclick="makeSidebarItemSelected(this, 'cherries')"
+                        >
+                            <img
+                                src="./images/icons/cherries.svg"
+                                class="user-image"
+                                alt="Wisienki"
+                            />
+                        </div>
+                    </a>
+                    <a href="#!">
+                        <div
+                            class="sidebar-item pill"
+                            onclick="makeSidebarItemSelected(this, 'pill')"
+                        >
+                            <img
+                                src="./images/icons/pill.svg"
+                                class=""
+                                alt="Leki"
+                            />
+                        </div>
+                    </a>
+                </div>
+                <!-- /#!sidebar-wrapper -->
+            </div>
+            <!-- /#!wrapper -->
+
+            <div class="content patients">
+                <!--  -->
+                <!-- Pacjenci -->
+
+                <h2 class="main-header">Pacjenci</h2>
+                <input
+                    class="search-input no-border form-control form-control-lg"
+                    type="text"
+                    placeholder="Szukaj pacjentów"
+                    value=""
+                />
+                <table class="table patient-table table-hover mt-5">
+                    <thead class="table-header">
+                        <tr>
+                            <th scope="col">Płeć</th>
+                            <th scope="col">Imię</th>
+                            <th scope="col">Nazwisko</th>
+                            <th scope="col">Wiek</th>
+                            <th scope="col">Ostatnia edycja</th>
+                            <th scope="col">Status</th>
+                            <td style="display: none">id</td>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="table-row">
+                            <td class="patient-gender">M</td>
+                            <td>Konstantyn</td>
+                            <td>Brzęczyszczykiewicz</td>
+                            <td>64</td>
+                            <td>21.09.2021 <span>11:26:31</span></td>
+                            <td class="state active">
+                                <label>Aktywny</label>
+                            </td>
+                            <td style="display: none">1</td>
+                            <td>
+                                <button
+                                    class="btn btn-link btn-lg m-1 px-0 mx-0"
+                                >
+                                    Edytuj
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="patient-gender">M</td>
+                            <td>Jaromir</td>
+                            <td>Trąbka</td>
+                            <td>21</td>
+                            <td>20.09.2021 <span>16:54:27</span></td>
+                            <td class="state waiting">
+                                <label>Oczekujący</label>
+                            </td>
+                            <td style="display: none">2</td>
+                            <td>
+                                <button
+                                    class="btn btn-link btn-lg m-1 px-0 mx-0"
+                                >
+                                    Edytuj
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="patient-gender">K</td>
+                            <td>Eugenia</td>
+                            <td>Kuternoga</td>
+                            <td>38</td>
+                            <td>21.09.2021 <span>11:26:31</span></td>
+                            <td class="state inactive">
+                                <label>Nieaktywny</label>
+                            </td>
+                            <td style="display: none">3</td>
+                            <td>
+                                <button
+                                    class="btn btn-link btn-lg m-1 px-0 mx-0"
+                                >
+                                    Edytuj
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="patient-gender">K</td>
+                            <td>Kaja</td>
+                            <td>Paschalska</td>
+                            <td>42</td>
+                            <td>21.09.2021 <span>11:26:31</span></td>
+                            <td class="state active">
+                                <label>Aktywny</label>
+                            </td>
+                            <td style="display: none">4</td>
+                            <td>
+                                <button
+                                    class="btn btn-link btn-lg m-1 px-0 mx-0"
+                                    onclick=""
+                                >
+                                    Edytuj
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- !Pacjenci -->
+                <!--  -->
+
+                <div class="divider"></div>
+
+                <!-- Edycja pacjenta -->
+                <!--  -->
+                <h2 class="patient-header">
+                    <div class="basic-info">
+                        <img
+                            class="back-arrow"
+                            src="./images/icons/back-arrow.svg"
+                        />
+                        Jaromir Trąbka<span>(64 l.)</span>
+                        <div class="state waiting">
+                            <label>Oczekujący</label>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-label">
+                            <img src="./images/icons/envelope.svg" />
+                            <p>jaromir.trabka@gmail.com</p>
+                        </div>
+                        <div class="vertical-divider"></div>
+                        <div class="contact-label">
+                            <img src="./images/icons/phone.svg" />
+                            <p>71 344 72 86</p>
+                        </div>
+                    </div>
+                </h2>
+
+                <div class="card">
+                    <div class="card-header">
+                        <ul
+                            class="nav nav-tabs card-header-tabs"
+                            id="bologna-list"
+                            role="tablist"
+                        >
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    href="#!"
+                                    onclick="toggleActive(this)"
+                                    role="tab"
+                                    type="radio"
+                                    >Dane i pomiary</a
+                                >
+                                <div class="underline visible"></div>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="#!"
+                                    onclick="toggleActive(this)"
+                                    role="tab"
+                                    type="radio"
+                                    >Ustawienia</a
+                                >
+                                <div class="underline"></div>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="#!"
+                                    onclick="toggleActive(this)"
+                                    role="tab"
+                                    type="radio"
+                                    >Dieta</a
+                                >
+                                <div class="underline"></div>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="#!"
+                                    onclick="toggleActive(this)"
+                                    role="tab"
+                                    type="radio"
+                                    >Upodobania kulinarne</a
+                                >
+                                <div class="underline"></div>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="#!"
+                                    onclick="toggleActive(this)"
+                                    role="tab"
+                                    type="radio"
+                                    >Plan aktywności</a
+                                >
+                                <div class="underline"></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body" id="measurements-info-card">
+                        Dane i pomiary
+                    </div>
+
+                    <div class="card-body hidden" id="settings-card">
+                        <div class="settings-card">
+                            <div class="settings-card-body">
+                                <div class="radios-container">
+                                    <div class="form-check col-md-6">
+                                        <input
+                                            checked
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="mealHours"
+                                            id="patient-same-meals-hours"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="patient-same-meals-hours"
+                                        >
+                                            Takie same godziny posiłków dla
+                                            poszczególnych dni tygodnia
+                                        </label>
+                                    </div>
+                                    <div class="form-check col-md-6">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="mealHours"
+                                            id="patient-various-meals-hours"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="patient-various-meals-hours"
+                                        >
+                                            Różne godziny posiłków dla
+                                            poszczególnych dni tygodnia
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!--  -->
+
+                                <div
+                                    class="meal-hours-chooser same-hours"
+                                    id="same-hours-chooser"
+                                >
+                                    <div
+                                        class="
+                                            row
+                                            meal-row
+                                            column-header
+                                            meal-hours-header
+                                        "
+                                    >
+                                        <div
+                                            class="
+                                                col-lg-2 col-sm-6
+                                                meal-col
+                                                pl-4
+                                            "
+                                        >
+                                            <p>Posiłek</p>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-6 meal-col">
+                                            <p>Godz.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row meal-row same-hours">
+                                        <div
+                                            class="
+                                                col-lg-2 col-sm-6
+                                                meal-col meal-name
+                                            "
+                                        >
+                                            <div
+                                                id="bin-icon"
+                                                class="
+                                                    bin-icon
+                                                    d-flex
+                                                    flex-column
+                                                    align-items-center
+                                                    justify-content-center
+                                                "
+                                                onmouseover="binMouseEnter(this)"
+                                                onmouseout="binMouseOut(this)"
+                                            >
+                                                <img
+                                                    src="images/bin.svg"
+                                                    alt="bin-icon"
+                                                    class=""
+                                                />
+                                            </div>
+                                            <p>Śniadanie</p>
+                                        </div>
+                                        <div
+                                            class="form-group col-md-2 meal-col"
+                                        >
+                                            <!-- <input
+                                                        class="
+                                                            form-control
+                                                            number-input
+                                                            basic-hour-input
+                                                            my-1
+                                                            mr-sm-2
+                                                        "
+                                                        id="inlineFormCustomSelectPref"
+                                                        value="07:00"
+                                                        type="time"
+                                                        step="300"
+                                                    /> -->
+
+                                            <input
+                                                type="text"
+                                                class="
+                                                    timepicker
+                                                    form-control
+                                                    basic-hour-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                name="time"
+                                                value="7:00"
+                                            />
+                                            <span class="timeinput-clock">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row meal-row same-hours">
+                                        <div
+                                            class="
+                                                col-lg-2 col-sm-6
+                                                meal-col meal-name
+                                            "
+                                        >
+                                            <div
+                                                id="bin-icon"
+                                                class="
+                                                    bin-icon
+                                                    d-flex
+                                                    flex-column
+                                                    align-items-center
+                                                    justify-content-center
+                                                "
+                                                onmouseover="binMouseEnter(this)"
+                                                onmouseout="binMouseOut(this)"
+                                            >
+                                                <img
+                                                    src="images/bin.svg"
+                                                    alt="bin-icon"
+                                                    class=""
+                                                />
+                                            </div>
+                                            <p>II śniadanie</p>
+                                        </div>
+                                        <div
+                                            class="form-group col-md-2 meal-col"
+                                        >
+                                            <!-- <input
+                                                        class="
+                                                            form-control
+                                                            number-input
+                                                            basic-hour-input
+                                                            my-1
+                                                            mr-sm-2
+                                                        "
+                                                        id="inlineFormCustomSelectPref"
+                                                        value="07:00"
+                                                        type="time"
+                                                        step="300"
+                                                    /> -->
+
+                                            <input
+                                                type="text"
+                                                class="
+                                                    timepicker
+                                                    form-control
+                                                    basic-hour-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                name="time"
+                                                value="7:00"
+                                            />
+                                            <span class="timeinput-clock">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row meal-row same-hours">
+                                        <div
+                                            class="
+                                                col-lg-2 col-sm-6
+                                                meal-col meal-name
+                                            "
+                                        >
+                                            <div
+                                                id="bin-icon"
+                                                class="
+                                                    bin-icon
+                                                    d-flex
+                                                    flex-column
+                                                    align-items-center
+                                                    justify-content-center
+                                                "
+                                                onmouseover="binMouseEnter(this)"
+                                                onmouseout="binMouseOut(this)"
+                                            >
+                                                <img
+                                                    src="images/bin.svg"
+                                                    alt="bin-icon"
+                                                    class=""
+                                                />
+                                            </div>
+                                            <p>Obiad</p>
+                                        </div>
+                                        <div
+                                            class="form-group col-md-2 meal-col"
+                                        >
+                                            <!-- <input
+                                                        class="
+                                                            form-control
+                                                            number-input
+                                                            basic-hour-input
+                                                            my-1
+                                                            mr-sm-2
+                                                        "
+                                                        id="inlineFormCustomSelectPref"
+                                                        value="07:00"
+                                                        type="time"
+                                                        step="300"
+                                                    /> -->
+
+                                            <input
+                                                type="text"
+                                                class="
+                                                    timepicker
+                                                    form-control
+                                                    basic-hour-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                name="time"
+                                                value="7:00"
+                                            />
+                                            <span class="timeinput-clock">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row meal-row same-hours">
+                                        <div
+                                            class="
+                                                col-lg-2 col-sm-6
+                                                meal-col meal-name
+                                            "
+                                        >
+                                            <div
+                                                id="bin-icon"
+                                                class="
+                                                    bin-icon
+                                                    d-flex
+                                                    flex-column
+                                                    align-items-center
+                                                    justify-content-center
+                                                "
+                                                onmouseover="binMouseEnter(this)"
+                                                onmouseout="binMouseOut(this)"
+                                            >
+                                                <img
+                                                    src="images/bin.svg"
+                                                    alt="bin-icon"
+                                                    class=""
+                                                />
+                                            </div>
+                                            <p>Podwieczorek</p>
+                                        </div>
+                                        <div
+                                            class="form-group col-md-2 meal-col"
+                                        >
+                                            <!-- <input
+                                                        class="
+                                                            form-control
+                                                            number-input
+                                                            basic-hour-input
+                                                            my-1
+                                                            mr-sm-2
+                                                        "
+                                                        id="inlineFormCustomSelectPref"
+                                                        value="07:00"
+                                                        type="time"
+                                                        step="300"
+                                                    /> -->
+
+                                            <input
+                                                type="text"
+                                                class="
+                                                    timepicker
+                                                    form-control
+                                                    basic-hour-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                name="time"
+                                                value="7:00"
+                                            />
+                                            <span class="timeinput-clock">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row meal-row same-hours">
+                                        <div
+                                            class="
+                                                col-lg-2 col-sm-6
+                                                meal-col meal-name
+                                            "
+                                        >
+                                            <div
+                                                id="bin-icon"
+                                                class="
+                                                    bin-icon
+                                                    d-flex
+                                                    flex-column
+                                                    align-items-center
+                                                    justify-content-center
+                                                "
+                                                onmouseover="binMouseEnter(this)"
+                                                onmouseout="binMouseOut(this)"
+                                            >
+                                                <img
+                                                    src="images/bin.svg"
+                                                    alt="bin-icon"
+                                                    class=""
+                                                />
+                                            </div>
+                                            <p>Kolacja</p>
+                                        </div>
+                                        <div
+                                            class="form-group col-md-2 meal-col"
+                                        >
+                                            <!-- <input
+                                                        class="
+                                                            form-control
+                                                            number-input
+                                                            basic-hour-input
+                                                            my-1
+                                                            mr-sm-2
+                                                        "
+                                                        id="inlineFormCustomSelectPref"
+                                                        value="07:00"
+                                                        type="time"
+                                                        step="300"
+                                                    /> -->
+
+                                            <input
+                                                type="text"
+                                                class="
+                                                    timepicker
+                                                    form-control
+                                                    basic-hour-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                name="time"
+                                                value="7:00"
+                                            />
+                                            <span class="timeinput-clock">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--  -->
+
+                                <div
+                                    class="meal-hours-chooser hidden"
+                                    id="various-hours-chooser"
+                                >
+                                    <div
+                                        class="
+                                            row
+                                            meal-row
+                                            column-header
+                                            meal-hours-header
+                                        "
+                                    >
+                                        <div class="meal-col pl-3">
+                                            <p>Posiłek</p>
+                                        </div>
+                                        <div class="meal-col meal-day">
+                                            <p>Pon.</p>
+                                        </div>
+                                        <div class="meal-col meal-day">
+                                            <p>Wt.</p>
+                                        </div>
+                                        <div class="meal-col meal-day">
+                                            <p>Śr.</p>
+                                        </div>
+                                        <div class="meal-col meal-day">
+                                            <p>Czw.</p>
+                                        </div>
+                                        <div class="meal-col meal-day">
+                                            <p>Pt.</p>
+                                        </div>
+                                        <div class="meal-col meal-day">
+                                            <p>Sb.</p>
+                                        </div>
+                                        <div class="meal-col meal-day">
+                                            <p>Ndz.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row meal-row meal-hours-row">
+                                        <div class="meal-col meal-name">
+                                            <div
+                                                id="bin-icon"
+                                                class="
+                                                    bin-icon
+                                                    d-flex
+                                                    flex-column
+                                                    align-items-center
+                                                    justify-content-center
+                                                "
+                                                onmouseover="binMouseEnter(this)"
+                                                onmouseout="binMouseOut(this)"
+                                            >
+                                                <img
+                                                    src="images/bin.svg"
+                                                    alt="bin-icon"
+                                                    class=""
+                                                />
+                                            </div>
+                                            <p>Śniadanie</p>
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="07:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="07:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="07:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="07:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="07:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="07:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="07:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="row meal-row meal-hours-row">
+                                        <div class="meal-col meal-name">
+                                            <div
+                                                id="bin-icon"
+                                                class="
+                                                    bin-icon
+                                                    d-flex
+                                                    flex-column
+                                                    align-items-center
+                                                    justify-content-center
+                                                "
+                                                onmouseover="binMouseEnter(this)"
+                                                onmouseout="binMouseOut(this)"
+                                            >
+                                                <img
+                                                    src="images/bin.svg"
+                                                    alt="bin-icon"
+                                                    class=""
+                                                />
+                                            </div>
+                                            <p>II śniadanie</p>
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="11:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="11:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="11:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="11:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="11:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="11:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="11:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="row meal-row meal-hours-row">
+                                        <div class="meal-col meal-name">
+                                            <div
+                                                id="bin-icon"
+                                                class="
+                                                    bin-icon
+                                                    d-flex
+                                                    flex-column
+                                                    align-items-center
+                                                    justify-content-center
+                                                "
+                                                onmouseover="binMouseEnter(this)"
+                                                onmouseout="binMouseOut(this)"
+                                            >
+                                                <img
+                                                    src="images/bin.svg"
+                                                    alt="bin-icon"
+                                                    class=""
+                                                />
+                                            </div>
+                                            <p>Obiad</p>
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="14:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="14:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="14:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="14:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="14:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="14:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="14:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="row meal-row meal-hours-row">
+                                        <div class="meal-col meal-name">
+                                            <div
+                                                id="bin-icon"
+                                                class="
+                                                    bin-icon
+                                                    d-flex
+                                                    flex-column
+                                                    align-items-center
+                                                    justify-content-center
+                                                "
+                                                onmouseover="binMouseEnter(this)"
+                                                onmouseout="binMouseOut(this)"
+                                            >
+                                                <img
+                                                    src="images/bin.svg"
+                                                    alt="bin-icon"
+                                                    class=""
+                                                />
+                                            </div>
+                                            <p>Podwieczorek</p>
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="17:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="17:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="17:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="17:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="17:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="17:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="17:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="row meal-row meal-hours-row">
+                                        <div class="meal-col meal-name">
+                                            <div
+                                                id="bin-icon"
+                                                class="
+                                                    bin-icon
+                                                    d-flex
+                                                    flex-column
+                                                    align-items-center
+                                                    justify-content-center
+                                                "
+                                                onmouseover="binMouseEnter(this)"
+                                                onmouseout="binMouseOut(this)"
+                                            >
+                                                <img
+                                                    src="images/bin.svg"
+                                                    alt="bin-icon"
+                                                    class=""
+                                                />
+                                            </div>
+                                            <p>Kolacja</p>
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="19:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="19:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="19:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="19:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="19:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="19:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                        <div class="form-group meal-col">
+                                            <input
+                                                class="
+                                                    form-control
+                                                    number-input
+                                                    my-1
+                                                    mr-sm-2
+                                                "
+                                                id="inlineFormCustomSelectPref"
+                                                value="19:00"
+                                                type="time"
+                                                step="1800"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body hidden" id="diet-info-card">
+                        Dieta
+                    </div>
+                    <div class="card-body hidden" id="culinary-tastes-card">
+                        Upodobania kulinarne
+                    </div>
+                    <div class="card-body hidden" id="activity-plan-card">
+                        Plan aktywności
+                    </div>
+                </div>
+                <!--  -->
+                <!-- Edycja pacjenta -->
+
+                <div class="divider"></div>
+            </div>
+        </div>
+    </body>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"
+    ></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+    <script src="script.js"></script>
+    <script src="timepicker.js"></script>
+</html>

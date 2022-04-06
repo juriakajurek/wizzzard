@@ -79,6 +79,398 @@
     }
 }
 
+// Pacjenci
+//
+
+.patients {
+    background-color: $background-gray;
+    box-shadow: 1000px 0px $background-gray, -1000px 0px $background-gray;
+    .patient-table {
+        border-collapse: separate;
+        border-spacing: 0 0.5rem;
+        td:first-child,
+        th:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+        td:last-child,
+        th:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .patient-gender {
+            text-align: center;
+        }
+        .table-header {
+            tr {
+                th {
+                    border: none;
+                }
+            }
+        }
+        .table-body {
+            .table-row {
+                border-radius: 0.5rem;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                height: 3.5rem;
+                background-color: white;
+
+                td {
+                    color: rgba($primary-color, 0.8);
+                    font-size: 0.875rem;
+                    line-height: 1.5rem;
+                    letter-spacing: 0px;
+
+                    vertical-align: middle;
+                    border: none;
+
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+                    span {
+                        color: rgba($primary-color, 0.48);
+                    }
+                    &.state {
+                        label {
+                            padding: 0.2rem;
+                            padding-left: 0.6rem;
+                            padding-right: 0.6rem;
+                            border-radius: 0.5rem;
+                            margin-bottom: 0;
+                        }
+                        &.active label {
+                            background-color: $active-green;
+                            color: $active-text;
+                        }
+                        &.inactive label {
+                            background-color: $inactive-red;
+                            color: $inactive-text;
+                        }
+                        &.waiting label {
+                            background-color: $waiting-orange;
+                            color: $waiting-text;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .patient-header {
+        width: 150vw;
+        background-color: #ffffff;
+        box-shadow: 1000px 0px #ffffff, -1000px 0px #ffffff;
+        margin-top: 0;
+        padding-top: 2.2rem;
+        margin-bottom: 0;
+        padding-bottom: 4.5rem;
+
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .basic-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            color: $primary-color;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            letter-spacing: 0px;
+            .back-arrow {
+                border-radius: 50%;
+                margin-right: 1rem;
+                &:hover {
+                    opacity: 0.85;
+                    cursor: pointer;
+                    box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
+                }
+            }
+            span {
+                padding-left: 0.5rem;
+                color: rgba($primary-color, 0.48);
+                font-size: 1rem;
+                line-height: 2rem;
+                letter-spacing: 0px;
+            }
+
+            .state {
+                padding-left: 1rem;
+                font-size: 0.875rem;
+
+                label {
+                    padding: 0.25rem;
+                    padding-left: 0.5rem;
+                    padding-right: 0.5rem;
+                    border-radius: 0.5rem;
+                    margin-bottom: 0;
+                }
+                &.active label {
+                    background-color: $active-green;
+                    color: $active-text;
+                }
+                &.inactive label {
+                    background-color: $inactive-red;
+                    color: $inactive-text;
+                }
+                &.waiting label {
+                    background-color: $waiting-orange;
+                    color: $waiting-text;
+                }
+            }
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .vertical-divider {
+                background-color: $input-border-gray;
+                width: 1px;
+                height: 1rem;
+                margin-left: 0.875rem;
+                margin-right: 0.875rem;
+            }
+            .contact-label {
+                display: flex;
+                flex-direction: row;
+
+                align-items: center;
+                justify-content: center;
+
+                p {
+                    padding: 0;
+                    margin: 0;
+                    margin-left: 0.625rem;
+                    color: rgba($primary-color, 0.48);
+                    font-size: 0.875rem;
+                    line-height: 1rem;
+                    letter-spacing: 0px;
+                }
+            }
+        }
+    }
+
+    .card {
+        position: relative;
+        top: -3.15rem;
+        border: none;
+        .card-header a {
+            color: rgba($primary-color, 0.8);
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            letter-spacing: 0px;
+            &.active {
+                color: $link-color;
+            }
+        }
+        .card-header {
+            margin-left: -1000px;
+            padding-left: 1000px;
+
+            margin-right: -1000px;
+            padding-right: 1000px;
+
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+
+            background-color: inherit;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .nav-item {
+                border: none;
+                .nav-link {
+                    border: none;
+                }
+
+                .underline {
+                    // margin-top: 1rem;
+                    visibility: hidden;
+                    position: absolute;
+                    &.visible {
+                        visibility: visible;
+                        width: 80%;
+                        position: relative;
+                        top: 0.15rem;
+                        left: 10%;
+                        height: 2px;
+                        background-color: $link-color;
+                    }
+                }
+            }
+        }
+        .card-body {
+            background-color: $background-gray;
+
+            // display: flex;
+            // flex-direction: row;
+            // flex-wrap: wrap;
+            &.hidden {
+                visibility: hidden;
+                position: absolute;
+            }
+            &#measurements-info-card {
+                padding-top: 3.15rem;
+            }
+
+            &#settings-card {
+                padding-top: 2rem;
+                .settings-card {
+                    .settings-card-body {
+                        padding: 1.6rem;
+                        background-color: white;
+                        border-radius: 1rem;
+
+                        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                        .meal-hours-chooser {
+                            &.hidden {
+                                opacity: 0;
+                                visibility: hidden;
+                                position: absolute;
+                            }
+                            &.same-hours {
+                                .meal-row {
+                                    justify-content: center !important;
+                                    &.column-header .meal-col {
+                                        justify-content: flex-start;
+                                        padding-left: 1rem;
+                                        &.meal-day {
+                                            padding-left: 1rem;
+                                            background-color: red;
+                                        }
+                                    }
+                                }
+                                // justify-content: flex-start;
+                            }
+                            margin-top: 1rem;
+                            padding: 0.5rem;
+                            .meal-row.column-header {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: flex-end;
+                                margin-bottom: 0.5rem;
+                                text-align: left;
+                                color: $primary-color;
+                                font-weight: 400;
+                                font-size: 0.875rem;
+                                line-height: 1.5rem;
+                                letter-spacing: 0px;
+                                div {
+                                    margin-left: 0;
+                                    padding-left: 0;
+                                    p {
+                                        text-align: center;
+                                        margin-left: 0;
+                                        span {
+                                            white-space: nowrap;
+                                        }
+                                    }
+                                }
+                                &.meal-hours-header {
+                                    justify-content: space-around;
+                                }
+                            }
+                            .meal-col {
+                                height: auto;
+                                width: 12%;
+                                margin: 0;
+                                padding: 0;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: flex-start;
+                                &.form-check {
+                                    // display: flex;
+                                    // align-items: center;
+                                    justify-content: center;
+                                }
+                                .bin-icon {
+                                    cursor: pointer;
+                                    width: 1.5rem;
+                                    height: 1.5rem;
+                                    margin-left: 0.25rem;
+                                    margin-right: 0.5rem;
+
+                                    &:hover {
+                                        background-color: rgba($hot-red, 0.08);
+                                        border-radius: 50%;
+                                    }
+                                }
+                                &.meal-name {
+                                    width: 9.5rem;
+                                    color: $primary-color;
+                                    font-weight: 600;
+                                    font-size: 1rem;
+                                    line-height: 1.5rem;
+                                    letter-spacing: 0%;
+                                }
+                                .form-check-label
+                                    :not(input:checked)
+                                    ~ .custom-checkbox {
+                                    width: 1rem;
+                                    height: 1rem;
+                                    border: none;
+                                    border-radius: 50%;
+                                    background-color: rgba(
+                                        $primary-color,
+                                        0.16
+                                    );
+                                    opacity: 1;
+                                    padding: 0.5rem !important;
+                                    margin: 0;
+                                    margin-top: 1.4rem;
+                                    &:hover {
+                                        // background-color: rgba($sidebar-item-selected, 0.56);
+
+                                        width: 2rem;
+                                        height: 2rem;
+                                        border: none;
+                                        // border-radius: 0.5rem;
+                                        background-color: #ffbcbc;
+                                        margin: 0;
+                                        margin-left: -0.5rem;
+                                        margin-top: 0.8rem;
+                                        box-shadow: inset 0px 0px 0px 10px
+                                            #ffeeee;
+                                    }
+                                }
+                                .meal-option {
+                                    margin-top: 0.8rem;
+                                    left: calc(50% - 0.5rem);
+                                }
+                                p {
+                                    margin-left: 0;
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &#diet-info-card {
+                padding-top: 3.15rem;
+            }
+            &#culinary-tastes-card {
+                padding-top: 3.15rem;
+            }
+            &#activity-plan-card {
+                padding-top: 3.15rem;
+            }
+        }
+    }
+
+    .btn-link {
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 140%;
+        color: $link-color !important;
+    }
+}
+
+//
+// !Pacjenci
+
 .timepicker {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -205,7 +597,7 @@
             padding-bottom: 4rem;
 
             &.gray {
-                background-color: $section-gray;
+                background-color: $background-gray;
                 position: relative;
                 margin-left: -50rem;
                 margin-right: -50rem;
@@ -1141,7 +1533,157 @@
     }
 }
 
+.dream {
+    width: 85%;
+    .header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 1rem;
+        h1 {
+            margin-bottom: 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: $primary-color;
+            margin-right: 24px;
+        }
+        h5 {
+            margin-bottom: 0;
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba($primary-color, 0.48);
+            margin-left: 16px;
+        }
+    }
+    .radios-container {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .form-check {
+            display: flex;
+            .form-check-input {
+                position: relative;
+                top: -0rem;
+            }
+        }
+    }
+    .dream-summary {
+        margin-bottom: 1rem;
+        font-size: 14px;
+        font-weight: 400;
+        color: $primary-color;
+    }
+}
+
 .activities {
+    .activity-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .card {
+            cursor: pointer;
+
+            &.selected {
+                border-color: $link-color;
+
+                .card-body {
+                    .radio {
+                        input[type='radio'] {
+                            & ~ label {
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .description {
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            width: 24%;
+            border-radius: 8px;
+            padding: 16px;
+
+            .card-body {
+                .radio {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    margin-bottom: 32px;
+
+                    input[type='radio'] {
+                        cursor: pointer;
+                        transform: scale(2.8);
+                        margin: 8px;
+                        margin-left: 0;
+
+                        & ~ label {
+                            padding-left: 32px;
+                            padding-top: 16px;
+                            align-items: flex-start;
+
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 24px;
+                            color: $primary-color;
+                        }
+                    }
+                }
+
+                .description {
+                    margin-bottom: 80px;
+                    margin-top: -16px;
+                    color: rgba($primary-color, 0.64);
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 20px;
+                    .card-text {
+                        text-align: start;
+                    }
+                }
+
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .card-footer {
+                margin: -17px;
+                padding: 16px;
+                border: none;
+                border-radius: 0 0 8px 8px;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+
+                .footer-text {
+                    width: 55%;
+                    font-size: 12px;
+                    line-height: 16px;
+                    font-weight: 400;
+                }
+
+                .footer-value {
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
     .form-check-input {
         position: relative;
         top: 1rem;
@@ -1185,7 +1727,7 @@
             font-size: 0.875rem;
             line-height: 1.5rem;
             letter-spacing: 0px;
-            div {
+            div:not(.card):not(.card-footer) {
                 justify-content: left;
                 text-align: left;
                 margin-left: 0;

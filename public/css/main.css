@@ -38,6 +38,284 @@
     #advanced-macronutrients-settings .meal-col .form .form-row {
       justify-content: flex-end !important; } }
 
+.patients {
+  background-color: #fbfbfb;
+  box-shadow: 1000px 0px #fbfbfb, -1000px 0px #fbfbfb; }
+  .patients .patient-table {
+    border-collapse: separate;
+    border-spacing: 0 0.5rem; }
+    .patients .patient-table td:first-child,
+    .patients .patient-table th:first-child {
+      border-radius: 10px 0 0 10px; }
+    .patients .patient-table td:last-child,
+    .patients .patient-table th:last-child {
+      border-radius: 0 10px 10px 0; }
+    .patients .patient-table .patient-gender {
+      text-align: center; }
+    .patients .patient-table .table-header tr th {
+      border: none; }
+    .patients .patient-table .table-body .table-row {
+      border-radius: 0.5rem;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      height: 3.5rem;
+      background-color: white; }
+      .patients .patient-table .table-body .table-row td {
+        color: rgba(51, 51, 51, 0.8);
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        border: none;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem; }
+        .patients .patient-table .table-body .table-row td span {
+          color: rgba(51, 51, 51, 0.48); }
+        .patients .patient-table .table-body .table-row td.state label {
+          padding: 0.2rem;
+          padding-left: 0.6rem;
+          padding-right: 0.6rem;
+          border-radius: 0.5rem;
+          margin-bottom: 0; }
+        .patients .patient-table .table-body .table-row td.state.active label {
+          background-color: #bff08b;
+          color: #579a11; }
+        .patients .patient-table .table-body .table-row td.state.inactive label {
+          background-color: rgba(255, 201, 209, 0.48);
+          color: #ea0000; }
+        .patients .patient-table .table-body .table-row td.state.waiting label {
+          background-color: #ffe5a4;
+          color: #be7e00; }
+  .patients .patient-header {
+    width: 150vw;
+    background-color: #ffffff;
+    box-shadow: 1000px 0px #ffffff, -1000px 0px #ffffff;
+    margin-top: 0;
+    padding-top: 2.2rem;
+    margin-bottom: 0;
+    padding-bottom: 4.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .patients .patient-header .basic-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #333333;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      letter-spacing: 0px; }
+      .patients .patient-header .basic-info .back-arrow {
+        border-radius: 50%;
+        margin-right: 1rem; }
+        .patients .patient-header .basic-info .back-arrow:hover {
+          opacity: 0.85;
+          cursor: pointer;
+          box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px; }
+      .patients .patient-header .basic-info span {
+        padding-left: 0.5rem;
+        color: rgba(51, 51, 51, 0.48);
+        font-size: 1rem;
+        line-height: 2rem;
+        letter-spacing: 0px; }
+      .patients .patient-header .basic-info .state {
+        padding-left: 1rem;
+        font-size: 0.875rem; }
+        .patients .patient-header .basic-info .state label {
+          padding: 0.25rem;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          border-radius: 0.5rem;
+          margin-bottom: 0; }
+        .patients .patient-header .basic-info .state.active label {
+          background-color: #bff08b;
+          color: #579a11; }
+        .patients .patient-header .basic-info .state.inactive label {
+          background-color: rgba(255, 201, 209, 0.48);
+          color: #ea0000; }
+        .patients .patient-header .basic-info .state.waiting label {
+          background-color: #ffe5a4;
+          color: #be7e00; }
+    .patients .patient-header .contact-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; }
+      .patients .patient-header .contact-info .vertical-divider {
+        background-color: #bebebe;
+        width: 1px;
+        height: 1rem;
+        margin-left: 0.875rem;
+        margin-right: 0.875rem; }
+      .patients .patient-header .contact-info .contact-label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; }
+        .patients .patient-header .contact-info .contact-label p {
+          padding: 0;
+          margin: 0;
+          margin-left: 0.625rem;
+          color: rgba(51, 51, 51, 0.48);
+          font-size: 0.875rem;
+          line-height: 1rem;
+          letter-spacing: 0px; }
+  .patients .card {
+    position: relative;
+    top: -3.15rem;
+    border: none; }
+    .patients .card .card-header a {
+      color: rgba(51, 51, 51, 0.8);
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      letter-spacing: 0px; }
+      .patients .card .card-header a.active {
+        color: #2f80ed; }
+    .patients .card .card-header {
+      margin-left: -1000px;
+      padding-left: 1000px;
+      margin-right: -1000px;
+      padding-right: 1000px;
+      border-top-left-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
+      background-color: inherit;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+      .patients .card .card-header .nav-item {
+        border: none; }
+        .patients .card .card-header .nav-item .nav-link {
+          border: none; }
+        .patients .card .card-header .nav-item .underline {
+          visibility: hidden;
+          position: absolute; }
+          .patients .card .card-header .nav-item .underline.visible {
+            visibility: visible;
+            width: 80%;
+            position: relative;
+            top: 0.15rem;
+            left: 10%;
+            height: 2px;
+            background-color: #2f80ed; }
+    .patients .card .card-body {
+      background-color: #fbfbfb; }
+      .patients .card .card-body.hidden {
+        visibility: hidden;
+        position: absolute; }
+      .patients .card .card-body#measurements-info-card {
+        padding-top: 3.15rem; }
+      .patients .card .card-body#settings-card {
+        padding-top: 2rem; }
+        .patients .card .card-body#settings-card .settings-card .settings-card-body {
+          padding: 1.6rem;
+          background-color: white;
+          border-radius: 1rem;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; }
+          .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser {
+            margin-top: 1rem;
+            padding: 0.5rem; }
+            .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser.hidden {
+              opacity: 0;
+              visibility: hidden;
+              position: absolute; }
+            .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser.same-hours .meal-row {
+              justify-content: center !important; }
+              .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser.same-hours .meal-row.column-header .meal-col {
+                justify-content: flex-start;
+                padding-left: 1rem; }
+                .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser.same-hours .meal-row.column-header .meal-col.meal-day {
+                  padding-left: 1rem;
+                  background-color: red; }
+            .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-row.column-header {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-end;
+              margin-bottom: 0.5rem;
+              text-align: left;
+              color: #333333;
+              font-weight: 400;
+              font-size: 0.875rem;
+              line-height: 1.5rem;
+              letter-spacing: 0px; }
+              .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-row.column-header div {
+                margin-left: 0;
+                padding-left: 0; }
+                .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-row.column-header div p {
+                  text-align: center;
+                  margin-left: 0; }
+                  .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-row.column-header div p span {
+                    white-space: nowrap; }
+              .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-row.column-header.meal-hours-header {
+                justify-content: space-around; }
+            .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-col {
+              height: auto;
+              width: 12%;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start; }
+              .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-col.form-check {
+                justify-content: center; }
+              .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-col .bin-icon {
+                cursor: pointer;
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-left: 0.25rem;
+                margin-right: 0.5rem; }
+                .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-col .bin-icon:hover {
+                  background-color: rgba(226, 27, 27, 0.08);
+                  border-radius: 50%; }
+              .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-col.meal-name {
+                width: 9.5rem;
+                color: #333333;
+                font-weight: 600;
+                font-size: 1rem;
+                line-height: 1.5rem;
+                letter-spacing: 0%; }
+              .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-col .form-check-label
+:not(input:checked)
+~ .custom-checkbox {
+                width: 1rem;
+                height: 1rem;
+                border: none;
+                border-radius: 50%;
+                background-color: rgba(51, 51, 51, 0.16);
+                opacity: 1;
+                padding: 0.5rem !important;
+                margin: 0;
+                margin-top: 1.4rem; }
+                .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-col .form-check-label
+:not(input:checked)
+~ .custom-checkbox:hover {
+                  width: 2rem;
+                  height: 2rem;
+                  border: none;
+                  background-color: #ffbcbc;
+                  margin: 0;
+                  margin-left: -0.5rem;
+                  margin-top: 0.8rem;
+                  box-shadow: inset 0px 0px 0px 10px #ffeeee; }
+              .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-col .meal-option {
+                margin-top: 0.8rem;
+                left: calc(50% - 0.5rem); }
+              .patients .card .card-body#settings-card .settings-card .settings-card-body .meal-hours-chooser .meal-col p {
+                margin-left: 0;
+                margin-bottom: 0; }
+      .patients .card .card-body#diet-info-card {
+        padding-top: 3.15rem; }
+      .patients .card .card-body#culinary-tastes-card {
+        padding-top: 3.15rem; }
+      .patients .card .card-body#activity-plan-card {
+        padding-top: 3.15rem; }
+  .patients .btn-link {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 140%;
+    color: #2f80ed !important; }
+
 .timepicker {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -141,7 +419,7 @@
       padding-top: 4rem;
       padding-bottom: 4rem; }
       .top-container .content .section.gray {
-        background-color: #fdfdfd;
+        background-color: #fbfbfb;
         position: relative;
         margin-left: -50rem;
         margin-right: -50rem;
@@ -849,6 +1127,112 @@
       height: 2px;
       background-color: #2f80ed; }
 
+.dream {
+  width: 85%; }
+  .dream .header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem; }
+    .dream .header h1 {
+      margin-bottom: 0;
+      font-size: 24px;
+      font-weight: 700;
+      color: #333333;
+      margin-right: 24px; }
+    .dream .header h5 {
+      margin-bottom: 0;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(51, 51, 51, 0.48);
+      margin-left: 16px; }
+  .dream .radios-container {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .dream .radios-container .form-check {
+      display: flex; }
+      .dream .radios-container .form-check .form-check-input {
+        position: relative;
+        top: -0rem; }
+  .dream .dream-summary {
+    margin-bottom: 1rem;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333333; }
+
+.activities .activity-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .activities .activity-cards .card {
+    cursor: pointer;
+    width: 24%;
+    border-radius: 8px;
+    padding: 16px; }
+    .activities .activity-cards .card.selected {
+      border-color: #2f80ed; }
+      .activities .activity-cards .card.selected .card-body .radio input[type='radio'] ~ label {
+        font-weight: 600; }
+      .activities .activity-cards .card.selected .card-body .description {
+        color: #333333; }
+    .activities .activity-cards .card .card-body {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .activities .activity-cards .card .card-body .radio {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 32px; }
+        .activities .activity-cards .card .card-body .radio input[type='radio'] {
+          cursor: pointer;
+          transform: scale(2.8);
+          margin: 8px;
+          margin-left: 0; }
+          .activities .activity-cards .card .card-body .radio input[type='radio'] ~ label {
+            padding-left: 32px;
+            padding-top: 16px;
+            align-items: flex-start;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #333333; }
+      .activities .activity-cards .card .card-body .description {
+        margin-bottom: 80px;
+        margin-top: -16px;
+        color: rgba(51, 51, 51, 0.64);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px; }
+        .activities .activity-cards .card .card-body .description .card-text {
+          text-align: start; }
+    .activities .activity-cards .card .card-footer {
+      margin: -17px;
+      padding: 16px;
+      border: none;
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around; }
+      .activities .activity-cards .card .card-footer .footer-text {
+        width: 55%;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400; }
+      .activities .activity-cards .card .card-footer .footer-value {
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 400; }
+
 .activities .form-check-input {
   position: relative;
   top: 1rem;
@@ -889,15 +1273,15 @@
     font-size: 0.875rem;
     line-height: 1.5rem;
     letter-spacing: 0px; }
-    .activities .activity-row.column-header div {
+    .activities .activity-row.column-header div:not(.card):not(.card-footer) {
       justify-content: left;
       text-align: left;
       margin-left: 0;
       padding-left: 0; }
-      .activities .activity-row.column-header div p {
+      .activities .activity-row.column-header div:not(.card):not(.card-footer) p {
         text-align: center;
         margin-left: 0; }
-        .activities .activity-row.column-header div p span {
+        .activities .activity-row.column-header div:not(.card):not(.card-footer) p span {
           white-space: nowrap; }
   .activities .activity-row .activity-col {
     margin: 0;
