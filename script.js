@@ -27,6 +27,14 @@ $(function () {
     handleConnector()
 })
 
+function manageActivityRadio(e) {
+    Array.from(e.parentNode.querySelectorAll('.card')).forEach((element) => {
+        element.classList.remove('selected')
+    })
+    e.querySelector('.form-check-input').checked = true
+    e.classList.add('selected')
+}
+
 var toggleChecked = function (col) {
     if (col?.parentNode?.children[0]) {
         col.parentNode.children[0].checked = !col.parentNode.children[0].checked

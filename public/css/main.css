@@ -1134,7 +1134,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start; }
+    justify-content: flex-start;
+    margin-bottom: 1rem; }
     .dream .header h1 {
       margin-bottom: 0;
       font-size: 24px;
@@ -1145,7 +1146,7 @@
       margin-bottom: 0;
       font-size: 12px;
       font-weight: 400;
-      color: #333333;
+      color: rgba(51, 51, 51, 0.48);
       margin-left: 16px; }
   .dream .radios-container {
     padding-top: 2.5rem;
@@ -1164,6 +1165,73 @@
     font-size: 14px;
     font-weight: 400;
     color: #333333; }
+
+.activities .activity-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .activities .activity-cards .card {
+    cursor: pointer;
+    width: 24%;
+    border-radius: 8px;
+    padding: 16px; }
+    .activities .activity-cards .card.selected {
+      border-color: #2f80ed; }
+      .activities .activity-cards .card.selected .card-body .radio input[type='radio'] ~ label {
+        font-weight: 600; }
+      .activities .activity-cards .card.selected .card-body .description {
+        color: #333333; }
+    .activities .activity-cards .card .card-body {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .activities .activity-cards .card .card-body .radio {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 32px; }
+        .activities .activity-cards .card .card-body .radio input[type='radio'] {
+          cursor: pointer;
+          transform: scale(2.8);
+          margin: 8px;
+          margin-left: 0; }
+          .activities .activity-cards .card .card-body .radio input[type='radio'] ~ label {
+            padding-left: 32px;
+            padding-top: 16px;
+            align-items: flex-start;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #333333; }
+      .activities .activity-cards .card .card-body .description {
+        margin-bottom: 80px;
+        margin-top: -16px;
+        color: rgba(51, 51, 51, 0.64);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px; }
+        .activities .activity-cards .card .card-body .description .card-text {
+          text-align: start; }
+    .activities .activity-cards .card .card-footer {
+      margin: -17px;
+      padding: 16px;
+      border: none;
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around; }
+      .activities .activity-cards .card .card-footer .footer-text {
+        width: 55%;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400; }
+      .activities .activity-cards .card .card-footer .footer-value {
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 400; }
 
 .activities .form-check-input {
   position: relative;
@@ -1205,15 +1273,15 @@
     font-size: 0.875rem;
     line-height: 1.5rem;
     letter-spacing: 0px; }
-    .activities .activity-row.column-header div {
+    .activities .activity-row.column-header div:not(.card):not(.card-footer) {
       justify-content: left;
       text-align: left;
       margin-left: 0;
       padding-left: 0; }
-      .activities .activity-row.column-header div p {
+      .activities .activity-row.column-header div:not(.card):not(.card-footer) p {
         text-align: center;
         margin-left: 0; }
-        .activities .activity-row.column-header div p span {
+        .activities .activity-row.column-header div:not(.card):not(.card-footer) p span {
           white-space: nowrap; }
   .activities .activity-row .activity-col {
     margin: 0;

@@ -108,7 +108,7 @@
             <div id="wrapper" class="toggled">
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper">
-                    <a href="/pacjenci.html">
+                    <a href="#">
                         <div
                             class="sidebar-item user selected"
                             onclick="makeSidebarItemSelected(this, 'user')"
@@ -235,17 +235,18 @@
                             </div>
                         </div>
                     </form>
-
-                    <button
-                        type="button"
-                        class="btn btn-outline-primary btn-sm px-4 my-1 py-2"
-                    >
-                        Zapisz i przejdź dalej
-                    </button>
+                    <a href="#diseases-form">
+                        <button
+                            type="button"
+                            class="btn btn-outline-primary btn-sm px-4 my-1 py-2"
+                        >
+                            Zapisz i przejdź dalej
+                        </button>
+                    </a>
                 </div>
                 <div class="divider"></div>
 
-                <div class="section gray">
+                <div class="section gray" id="diseases-form">
                     <h3 class="section-header">2. Dane kliniczne</h3>
                     <div class="diseases-form">
                         <p class="header">Wykaz chorób</p>
@@ -4674,6 +4675,247 @@
                         </div>
                     </span>
                 </div>
+
+                <div class="section activities d-flex flex-column">
+                    <div
+                        class="header-row d-flex flex-row justify-content-between w-100"
+                    >
+                        <h3 class="section-header">7. Aktywność fizyczna</h3>
+                    </div>
+
+                    <div class="dream row activity-row column-header">
+                        <div class="header">
+                            <img
+                                src="./images/moon.svg"
+                                alt="icon"
+                                class="mr-4"
+                            />
+                            <h1>Sen</h1>
+                            <input
+                                checked
+                                class="form-control number-input"
+                                id="inlineFormCustomSelectPref"
+                                value="8"
+                                type="number"
+                                step="0.5"
+                            />
+                            <h5>
+                                Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit.
+                            </h5>
+                        </div>
+                        <!-- <div class="radios-container">
+                            <div class="form-check col-md-6">
+                                <input
+                                    checked
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="activityLevel"
+                                    id="low-activityLevel"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="low-activityLevel"
+                                >
+                                    Niska aktywność
+                                </label>
+                            </div>
+                            <div class="form-check col-md-6">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="activityLevel"
+                                    id="medium-activityLevel"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="medium-activityLevel"
+                                >
+                                    Średnia aktywność
+                                </label>
+                            </div>
+                            <div class="form-check col-md-6">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="activityLevel"
+                                    id="high-activityLevel"
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="high-activityLevel"
+                                >
+                                    Wysoka aktywność
+                                </label>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div class="activity-cards row activity-row column-header">
+                        <div class="card" onclick="manageActivityRadio(this)">
+                            <div class="card-body">
+                                <div class="radio">
+                                    <input
+                                        class="form-check-input aktywnosc_typ"
+                                        type="radio"
+                                        name="aktywnosc_typ"
+                                        id="aktywnosc_niska"
+                                        value="niska"
+                                        onchange=""
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="aktywnosc_niska"
+                                    >
+                                        Niska aktywność
+                                    </label>
+                                </div>
+                                <div class="description">
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Vivamus mattis mollis
+                                        feugiat.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="card-footer"
+                                style="
+                                    background-color: rgb(255 69 102 / 4%);
+                                    color: #ff4566;
+                                "
+                            >
+                                <div class="footer-text">
+                                    średnia dobowa aktywność:
+                                </div>
+                                <div class="footer-value">0.8-1.2</div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="selected card"
+                            onclick="manageActivityRadio(this)"
+                        >
+                            <div class="card-body">
+                                <div class="radio">
+                                    <input
+                                        checked
+                                        class="form-check-input aktywnosc_typ"
+                                        type="radio"
+                                        name="aktywnosc_typ"
+                                        id="aktywnosc_niska"
+                                        value="niska"
+                                        onchange=""
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="aktywnosc_niska"
+                                    >
+                                        Średnia aktywność
+                                    </label>
+                                </div>
+                                <div class="description">
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Vivamus mattis mollis
+                                        feugiat.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="card-footer"
+                                style="
+                                    background-color: rgb(255 157 66 / 4%);
+                                    color: #ff9d42;
+                                "
+                            >
+                                <div class="footer-text">
+                                    średnia dobowa aktywność:
+                                </div>
+                                <div class="footer-value">1.3-1.7</div>
+                            </div>
+                        </div>
+
+                        <div class="card" onclick="manageActivityRadio(this)">
+                            <div class="card-body">
+                                <div class="radio">
+                                    <input
+                                        class="form-check-input aktywnosc_typ"
+                                        type="radio"
+                                        name="aktywnosc_typ"
+                                        id="aktywnosc_niska"
+                                        value="niska"
+                                        onchange=""
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="aktywnosc_niska"
+                                    >
+                                        Wysoka aktywność
+                                    </label>
+                                </div>
+                                <div class="description">
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Vivamus mattis mollis
+                                        feugiat.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="card-footer"
+                                style="
+                                    background-color: rgb(112 203 21 / 4%);
+                                    color: #70cb15;
+                                "
+                            >
+                                <div class="footer-text">
+                                    średnia dobowa aktywność:
+                                </div>
+                                <div class="footer-value">1.4-2.1</div>
+                            </div>
+                        </div>
+
+                        <div class="card" onclick="manageActivityRadio(this)">
+                            <div class="card-body">
+                                <div class="radio">
+                                    <input
+                                        class="form-check-input aktywnosc_typ"
+                                        type="radio"
+                                        name="aktywnosc_typ"
+                                        id="aktywnosc_typ_wlasna"
+                                        value="wlasna"
+                                        onchange=""
+                                    />
+                                    <label class="form-check-label" for="">
+                                        Ustawienia własne
+                                    </label>
+                                </div>
+                                <div class="description">
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Vivamus mattis mollis
+                                        feugiat.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="card-footer"
+                                style="
+                                    background-color: rgb(98 48 244 / 4%);
+                                    color: #6230f4;
+                                "
+                            >
+                                <div class="footer-text">
+                                    średnia dobowa aktywność:
+                                </div>
+                                <div class="footer-value">?</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+
                 <button
                     type="button"
                     class="save-button btn btn-primary btn-lg btn-block"
